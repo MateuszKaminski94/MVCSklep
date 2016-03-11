@@ -89,11 +89,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\koszyk.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logowanie.png" />
+    <Content Include="Content\Images\przyciskprawo.png" />
+    <Content Include="Content\Images\wyszukiwarka.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Type-icons\akcji.png" />
+    <Content Include="Content\Type-icons\fabularne.png" />
+    <Content Include="Content\Type-icons\indie.png" />
+    <Content Include="Content\Type-icons\przygodowe.png" />
+    <Content Include="Content\Type-icons\sportowe.png" />
+    <Content Include="Content\Type-icons\strategie.png" />
+    <Content Include="Content\Type-icons\strzelaniny.png" />
+    <Content Include="Content\Type-icons\symulacje.png" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,6 +118,10 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Fonts\YANONEKAFFEESATZ-BOLD.OTF" />
+    <Content Include="Fonts\YANONEKAFFEESATZ-EXTRALIGHT.OTF" />
+    <Content Include="Fonts\YANONEKAFFEESATZ-LIGHT.OTF" />
+    <Content Include="Fonts\YANONEKAFFEESATZ-REGULAR.OTF" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,8 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Content\Games\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
