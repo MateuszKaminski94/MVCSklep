@@ -43,6 +43,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -92,27 +120,37 @@
     <Content Include="Content\Images\koszyk.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\logowanie.png" />
+    <Content Include="Content\Images\przycisklewo.png" />
     <Content Include="Content\Images\przyciskprawo.png" />
     <Content Include="Content\Images\wyszukiwarka.png" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Type-icons\akcji.png" />
-    <Content Include="Content\Type-icons\fabularne.png" />
-    <Content Include="Content\Type-icons\indie.png" />
-    <Content Include="Content\Type-icons\przygodowe.png" />
-    <Content Include="Content\Type-icons\sportowe.png" />
-    <Content Include="Content\Type-icons\strategie.png" />
-    <Content Include="Content\Type-icons\strzelaniny.png" />
-    <Content Include="Content\Type-icons\symulacje.png" />
+    <Content Include="Content\Genre-icons\akcji.png" />
+    <Content Include="Content\Genre-icons\fabularne.png" />
+    <Content Include="Content\Genre-icons\indie.png" />
+    <Content Include="Content\Genre-icons\przygodowe.png" />
+    <Content Include="Content\Genre-icons\sportowe.png" />
+    <Content Include="Content\Genre-icons\strategie.png" />
+    <Content Include="Content\Genre-icons\strzelaniny.png" />
+    <Content Include="Content\Genre-icons\symulacje.png" />
     <Content Include="Global.asax" />
-    <Content Include="Prototype\Main.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="DAL\StoreContext.cs" />
+    <Compile Include="DAL\StoreInitializer.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +160,13 @@
     <Content Include="Fonts\YANONEKAFFEESATZ-EXTRALIGHT.OTF" />
     <Content Include="Fonts\YANONEKAFFEESATZ-LIGHT.OTF" />
     <Content Include="Fonts\YANONEKAFFEESATZ-REGULAR.OTF" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_StoreLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Kontakt.cshtml" />
+    <Content Include="Views\Home\Onas.cshtml" />
+    <Content Include="Views\Home\Wysylka.cshtml" />
+    <Content Include="Views\Home\Regulamin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,8 +177,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Games\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
+    <Folder Include="Prototype\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Store\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

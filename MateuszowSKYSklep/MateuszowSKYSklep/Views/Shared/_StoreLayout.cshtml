@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <div id="header">
+            <div id="search">
+                <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
+            </div>
+            <div id="logo">
+                <a href="@Url.Content("~/")">
+                    <img src="@Url.Content("~/Content/Images/logo.png")" />
+                </a>
+            </div>
+            <div id="user">
+                <img src="@Url.Content("~/Content/Images/logowanie.png")" />
+            </div>
+            <div id="basket">
+                <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </header>
+
+<nav id="types">
+    <ul>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/akcji.png")"/>
+                <div class="types-text">
+                    Akcji
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/fabularne.png")"/>
+                <div class="types-text">
+                    Fabularne
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/indie.png")"/>
+                <div class="types-text">
+                    Indie
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/przygodowe.png")"/>
+                <div class="types-text">
+                    Przygodowe
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/sportowe.png")"/>
+                <div class="types-text">
+                    Sportowe
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/strategie.png")"/>
+                <div class="types-text">
+                    Strategie
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/strzelaniny.png")"/>
+                <div class="types-text">
+                    Strzelaniny
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="@Url.Content("~/Content/Genre-icons/symulacje.png")"/>
+                <div class="types-text">
+                    Symulacje
+                </div>
+            </a>
+        </li>
+
+        <div style="clear: both;"></div>
+    </ul>
+
+</nav>
+
+<div>
+
+    @RenderBody()
+
+</div>
+
+    <footer>
+        <nav id="footer">
+            <ul>
+                <li><a href="@Url.Action("StaticContent","Home", new { viewname = "onas"})">O nas</a></li>
+                <li><a href="@Url.Action("StaticContent","Home", new { viewname = "kontakt"})">Kontakt</a></li>
+                <li><a href="@Url.Action("StaticContent","Home", new { viewname = "wysylka"})">Wysyłka</a></li>
+                <li><a href="@Url.Action("StaticContent","Home", new { viewname = "regulamin"})">Regulamin</a></li>
+                <li>
+                    <div id="last-foot">
+                        MateuszowSKY &copy; 2016
+                    </div>
+                </li>
+                <div style="clear: both;"></div>
+            </ul>
+        </nav>
+    </footer>
+
+    @RenderSection("ScriptsBottom", required: false)
+
+</body>
+</html>
