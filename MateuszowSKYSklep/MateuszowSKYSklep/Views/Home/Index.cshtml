@@ -1,28 +1,67 @@
-﻿
+﻿@using MateuszowSKYSklep.Models
+@using MateuszowSKYSklep.Infrastructure
+@model MateuszowSKYSklep.ViewModels.HomeViewModel
+
+
 @{
     ViewBag.Title = "Strona glowna MateuszowSKY";
 }
 
-    <div id="slider">
-        <div id="slider-content">
-            <div id="slider-left">
-                <img src="@Url.Content("~/Content/Images/przycisklewo.png")" />
-            </div>
 
 
-            <div id="slider-right">
-                <img src="@Url.Content("~/Content/Images/przyciskprawo.png")" />
-            </div>
+<nav id="types">
+    <ul>
+        @foreach (var genre in Model.Genres)
+        {
+            <li>
+                <a href="@Url.Action("List","Store", new { genrename = genre.Name.ToLower() })">
+                    <img src="@Url.GenreIconPath(genre.IconFilename)" />
+                    <div class="types-text">
+                        @genre.Name
+                    </div>
+                </a>
+            </li>
+        }
+
+        <div style="clear: both;"></div>
+    </ul>
+
+</nav>
+
+<div id="slider">
+    <div id="slider-content">
+        <div id="slider-left">
+            <img src="@Url.Content("~/Content/Images/przycisklewo.png")" />
+        </div>
+
+        <ul>
+            @foreach (var game in Model.PreOrders)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
+                        <img src="@Url.GameImagePath(game.MainImageFilename)" style="float: left;"/>
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <div id="slider-right">
+            <img src="@Url.Content("~/Content/Images/przyciskprawo.png")" />
         </div>
     </div>
+</div>
 
-    <div id="random">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <div style="clear: both;"></div>
-        </ul>
-    </div>
+<div id="random">
+    <ul>
+        @foreach (var game in Model.Randoms)
+        {
+            <li>
+                <a href="@Url.Action("Details","Store", new {id = game.GameId} )">
+                    <img src="@Url.GameImagePath(game.MainImageFilename)" />
+                </a>
+            </li>
+        }
+        <div style="clear: both;"></div>
+    </ul>
+</div>
 
