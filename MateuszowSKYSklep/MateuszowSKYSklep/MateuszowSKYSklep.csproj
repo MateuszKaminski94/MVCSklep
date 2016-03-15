@@ -142,6 +142,9 @@
     <Content Include="Content\Genre-icons\strzelaniny.png" />
     <Content Include="Content\Genre-icons\symulacje.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\mainView.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -180,6 +183,7 @@
     <Content Include="Views\Home\Wysylka.cshtml" />
     <Content Include="Views\Home\Regulamin.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

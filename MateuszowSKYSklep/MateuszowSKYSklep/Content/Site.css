@@ -28,12 +28,20 @@ body
     background-color: #32353a;   
 }
 
+#show
+{
+    float: left;
+    height: 50px;
+    padding: 13px;
+    width: 50px;
+}
+
 #search
 {
     float: left;
     height: 50px;
     padding: 13px;
-    width: 365px;
+    width: 315px;
 }
 
 #logo

@@ -19,6 +19,6 @@ namespace MateuszowSKYSklep.Models
         public bool IsPreOrder { get; set; }
         public bool IsHidden { get; set; }
 
-        public virtual Genre Type { get; set; }
+        public virtual Genre Genre { get; set; }
     }
 }
