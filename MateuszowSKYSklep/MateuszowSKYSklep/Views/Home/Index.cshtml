@@ -9,17 +9,20 @@
 
 
 
-<nav id="types">
+<nav id="genre">
     <ul>
         @foreach (var genre in Model.Genres)
         {
             <li>
-                <a href="@Url.Action("List","Store", new { genrename = genre.Name.ToLower() })">
-                    <img src="@Url.GenreIconPath(genre.IconFilename)" />
-                    <div class="types-text">
+                <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToLower()})">
+                    <div class="genres-img">
+                        <img src="@Url.GenreIconPath(genre.IconFilename)" />
+                    </div>
+                    <div class="genres-text">
                         @genre.Name
                     </div>
                 </a>
+
             </li>
         }
 
@@ -39,7 +42,7 @@
             {
                 <li>
                     <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
-                        <img src="@Url.GameImagePath(game.MainImageFilename)" style="float: left;"/>
+                        <img src="@Url.GameImagePath(game.MainImageFilename)" style="float: left;" />
                     </a>
                 </li>
             }

@@ -179,6 +179,7 @@
     <Content Include="Views\Home\Onas.cshtml" />
     <Content Include="Views\Home\Wysylka.cshtml" />
     <Content Include="Views\Home\Regulamin.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -189,7 +190,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Prototype\" />
-    <Folder Include="Views\Store\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

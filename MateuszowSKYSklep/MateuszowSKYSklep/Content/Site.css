@@ -33,7 +33,6 @@ body
     float: left;
     height: 50px;
     padding: 13px;
-    display: block;
     width: 365px;
 }
 
@@ -42,7 +41,6 @@ body
     float: left;
     height: 50px;
     padding: 13px;
-    display: block;
 }
 
 #user
@@ -50,7 +48,6 @@ body
     float: right;
     height: 50px;
     padding: 13px;
-    display: block;
 }
 
 #basket
@@ -58,24 +55,21 @@ body
     float: right;
     height: 50px;
     padding: 13px;
-    display: block;
-}
-
-#types 
-{
-    font-size: 26px; 
-    background-color: #494d55;
-    padding: 4px;
-    display: block;
 }
 
 ul
 {
     list-style-type: none;   
-
 }
 
-#types ul li a
+nav#genre
+{
+    font-size: 26px; 
+    background-color: #494d55;
+    padding: 4px;
+}
+
+nav#genre ul li a
 {
     height: 70px;
     width: 240px;
@@ -84,22 +78,36 @@ ul
     margin: 4px;
     text-decoration: none;
     color: #ef4c45;
-    display: block;
-
 }
 
-#types ul li a img 
+nav#genre ul li a:hover 
+{
+    margin: 3px;
+    height: 70px;
+    width: 240px;
+    background-color: #43464b;
+    border: 1px solid #ef4c45;
+}
+
+.genres-img img 
 {
     height: 40px;
+    margin: auto;
     margin-top: 15px;
-    margin: 15px;
+    display: block;
+}
+
+.genres-img 
+{
+    
+    height: 70px;
+    width: 70px;
     float: left;
 }
 
-.types-text 
+.genres-text 
 {
     margin-top: 18px;
-    margin-left: 10px;
 }
 
 #slider 
@@ -135,7 +143,6 @@ ul
 
 #random 
 {
-
     margin: 15px 0;    
     background-color: #32353a;
     padding: 10px 20px 10px 20px;
