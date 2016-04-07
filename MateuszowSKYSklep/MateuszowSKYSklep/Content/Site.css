@@ -196,3 +196,160 @@ nav#genre ul li a:hover
     margin: 2px 5px;
     padding: 20px;
 }
+
+#detailtop {
+    position: relative;
+    width: 960px;
+    height: 480px;
+    margin: 15px auto;
+    background-image: url('Screens/1/ss1.jpg');
+    background-size: cover;
+}
+
+#detailtitle 
+{
+    height: 55px;
+    padding-right: 60px;
+    padding-left: 30px;
+    padding-top: 5px;
+    top: 40px;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 40px;
+    color: #ffffff;
+    position: absolute;  
+}
+
+#topminiaturer 
+{
+    left: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 880px;
+    height: 110px;    
+    background-color: rgba(0,0,0,0.4);
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+#topminiatures
+{
+    display: block;
+    width: 3168px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    margin-left: -1408px;
+}
+
+.topminiature 
+{
+    height: 100px;
+    width: 166px;
+    list-style-type: none;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;         
+}
+
+.topminiature img 
+{
+    height: 100px;
+    width: 166px;
+}
+
+#rightminiaturebtn 
+{
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#leftminiaturebtn 
+{
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#rightminiaturebtn img
+{
+    height: 80px;
+}
+
+#leftminiaturebtn img
+{
+    height: 80px;    
+}
+
+#topinfo 
+{
+    float: right;
+    width: 400px;
+    height: 330px;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 30px;
+}
+
+#topinfocontent 
+{
+    right: 25px;
+    background-color: #32353a;
+    width: 350px;
+    height: 270px;
+    padding-top: 30px;
+    position: absolute;
+}
+
+#addtobasketbtn 
+{
+    width: 300px;
+    height: 50px;
+    background-color: #ef4c45;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#topinfocontenttext 
+{
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 40px;    
+}
+
+#priceinfo 
+{
+    background-image: url('Images/pricebackground.png');
+    float: right;
+    height: 60px;
+    width: 130px;
+    position: absolute;
+    bottom: 10px;
+    right: -5px;
+    font-size: 35px;
+    padding-top: 10px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#description 
+{
+    
+}
+
+#specification 
+{
+    
+}
+
