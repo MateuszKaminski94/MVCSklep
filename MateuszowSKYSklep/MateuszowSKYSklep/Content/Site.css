@@ -9,17 +9,20 @@
 }
 
 @font-face {
-    font-family: 'YANONEKAFFEESATZ-LIGHT';
-    src: url('../Fonts/YANONEKAFFEESATZ-LIGHT.OTF') format('opentype');
+    font-family: 'Ubuntu-R';
+    src: url('../Fonts/Ubuntu-R.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'Ubuntu-L';
+    src: url('../Fonts/Ubuntu-L.ttf') format('truetype');
+}
 body 
 {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #554949;
-    font-family: 'YANONEKAFFEESATZ-LIGHT';
+    background-color: #554949;    
+    font-family: 'Ubuntu-L';
 }
 
 #header 
@@ -31,9 +34,9 @@ body
 #show
 {
     float: left;
-    height: 50px;
-    padding: 13px;
-    width: 50px;
+    height: 48px;
+    padding: 14px;
+    width: 48px;
 }
 
 #search
@@ -61,8 +64,8 @@ body
 #basket
 {
     float: right;
-    height: 50px;
-    padding: 13px;
+    height: 46px;
+    padding: 15px;
 }
 
 ul
@@ -115,7 +118,7 @@ nav#genre ul li a:hover
 
 .genres-text 
 {
-    margin-top: 18px;
+    margin-top: 22px;
 }
 
 #slider 
@@ -208,13 +211,13 @@ nav#genre ul li a:hover
 
 #detailtitle 
 {
-    height: 55px;
     padding-right: 60px;
     padding-left: 30px;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     top: 40px;
     background-color: rgba(0,0,0,0.4);
-    font-size: 40px;
+    font-size: 30px;
     color: #ffffff;
     position: absolute;  
 }
@@ -234,11 +237,9 @@ nav#genre ul li a:hover
 #topminiatures
 {
     display: block;
-    width: 3168px;
     height: 100px;
     padding: 0;
     margin: 0;
-    margin-left: -1408px;
 }
 
 .topminiature 
@@ -255,6 +256,12 @@ nav#genre ul li a:hover
 {
     height: 100px;
     width: 166px;
+    cursor: pointer;
+}
+
+.topminiature img:hover 
+{
+        
 }
 
 #rightminiaturebtn 
@@ -266,6 +273,7 @@ nav#genre ul li a:hover
     right: 0;
     padding-top: 20px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 #leftminiaturebtn 
@@ -277,6 +285,7 @@ nav#genre ul li a:hover
     left: 0;
     padding-top: 20px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 #rightminiaturebtn img
@@ -294,7 +303,7 @@ nav#genre ul li a:hover
     float: right;
     width: 400px;
     height: 330px;
-    background-color: rgba(0,0,0,0.4);
+    /*background-color: rgba(0,0,0,0.4);*/
     padding-top: 30px;
 }
 
@@ -319,37 +328,87 @@ nav#genre ul li a:hover
     font-size: 30px;
     text-align: center;
     padding-top: 10px;
+    cursor: pointer;
 }
 
 #topinfocontenttext 
 {
-    font-size: 20px;
+    font-size: 15px;
     color: #ffffff;
-    margin-left: 40px;    
+    margin-left: 40px;   
+    line-height: 30px; 
 }
 
 #priceinfo 
 {
     background-image: url('Images/pricebackground.png');
     float: right;
-    height: 60px;
+    height: 52px;
     width: 130px;
     position: absolute;
     bottom: 10px;
     right: -5px;
-    font-size: 35px;
-    padding-top: 10px;
+    font-size: 30px;
+    padding-top: 18px;
     text-align: right;
-    padding-right: 20px;
+    padding-right: 15px;
 }
 
-#description 
+#detailbottomleft 
 {
-    
+    width: 650px;  
+    float: left;
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 
-#specification 
+#detailbottomlefttitle 
 {
-    
+    width: 300px;
+    height: 40px;
+    background-color: #ef4c45;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;        
 }
 
+#detailbottomlefttext 
+{
+    width: 590px;  
+    background-color: #32353a;    
+    padding: 30px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+#detailbottomright 
+{
+    width: 335px;  
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: #ffffff;
+}
+
+#detailbottomrighttitle 
+{
+    width: 300px;
+    height: 40px;
+    background-color: #ef4c45;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;        
+}
+
+#detailbottomrighttext 
+{
+    width: 315px;  
+    background-color: #32353a;    
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: justify;
+}

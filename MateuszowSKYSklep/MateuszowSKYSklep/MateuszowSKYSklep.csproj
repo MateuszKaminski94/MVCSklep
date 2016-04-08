@@ -126,6 +126,7 @@
     <Content Include="Content\Games\7.png" />
     <Content Include="Content\Games\8.png" />
     <Content Include="Content\Games\9.png" />
+    <Content Include="Content\Images\kategorie.png" />
     <Content Include="Content\Images\koszyk.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\logowanie.png" />
@@ -184,10 +185,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Fonts\YANONEKAFFEESATZ-BOLD.OTF" />
-    <Content Include="Fonts\YANONEKAFFEESATZ-EXTRALIGHT.OTF" />
-    <Content Include="Fonts\YANONEKAFFEESATZ-LIGHT.OTF" />
-    <Content Include="Fonts\YANONEKAFFEESATZ-REGULAR.OTF" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -197,6 +194,8 @@
     <Content Include="Views\Home\Regulamin.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="Fonts\Ubuntu-R.ttf" />
+    <Content Include="Fonts\Ubuntu-L.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
