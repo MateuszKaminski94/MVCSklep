@@ -8,11 +8,10 @@
 }
 
 
-
 <nav id="genre">
     <ul>
         @foreach (var genre in Model.Genres)
-        {
+            {
             <li>
                 <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToLower()})">
                     <div class="genres-img">
@@ -30,6 +29,9 @@
     </ul>
 
 </nav>
+
+
+
 
 <div id="slider">
     <div id="slider-content">
