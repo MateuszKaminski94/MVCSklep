@@ -35,6 +35,7 @@
         });
 
         //console.log($('.topminiature img')[4].src);
+        //$('#detailtop').css('background-image', url($('.topminiature img')[4].src));
     });
 
     $('#leftminiaturebtn').click(function () {
@@ -44,6 +45,9 @@
             $miniatureContainer.css('margin-left', '-=176');
 
         });
+
+        //console.log($('.topminiature img')[4].src);
+        //$('#detailtop').css('background-image', url($('.topminiature img')[4].src) );
     });
 
 });

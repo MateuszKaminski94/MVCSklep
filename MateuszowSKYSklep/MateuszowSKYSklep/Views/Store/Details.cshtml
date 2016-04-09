@@ -1,12 +1,13 @@
-﻿
+﻿@model MateuszowSKYSklep.ViewModels.DetailsViewModel
+@using MateuszowSKYSklep.Infrastructure
 
 @{
     ViewBag.Title = "Game details";
 }
 
-<div id="detailtop">
+<div id="detailtop" style="background-image: url(@Url.GameScreenPath(Model.Games.GameId,Path.GetFileName(Model.Links.ElementAt(0))));">
     <div id="detailtitle">
-        Alan Wake
+        @Model.Games.GameTitle
     </div>
     <div id="topinfo">
         <div id="topinfocontent">
@@ -14,11 +15,12 @@
                 Dodaj do koszyka
             </div>
             <div id="topinfocontenttext">
-                <br />Studio: Remedy Entertainment
-                <br />Data premiery: 16/01/2012
+                <br />Studio: @Model.Games.DeveloperName
+                <br />Data premiery: @Model.Games.DatePremiere
 
                 <div id="priceinfo">
-                    35.78$
+                    @Model.Games.Price
+                    $
                 </div>
             </div>
         </div>
@@ -27,18 +29,16 @@
     <div id="leftminiaturebtn">
         <img src="~/Content/Images/przycisklewo.png" />
     </div>
+
     <div id="topminiaturer">
         <ul id="topminiatures">
-            <li class="topminiature"><img src="~/Content/Screens/1/ss1.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss2.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss3.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss4.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss5.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss6.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss7.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss8.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss9.jpg" /></li>
-            <li class="topminiature"><img src="~/Content/Screens/1/ss10.jpg" /></li>
+            @foreach (var fullPath in Model.Links)
+            {
+                var fileName = Path.GetFileName(fullPath);
+                <li class="topminiature">
+                    <img src="@Url.GameScreenPath(Model.Games.GameId,fileName)" />
+                </li>
+            }
         </ul>
         <div style="clear: both;"></div>
     </div>
@@ -54,34 +54,22 @@
             Opis
         </div>
         <div id="detailbottomlefttext">
-            Alan Wake stanowi kolejne dzieło ludzi odpowiedzialnych za popularną markę Max Payne. Całość stworzono w myśl konwencji psychologicznego thrillera akcji,
-            a podczas developingu wyraźnie inspirowano się kultowym serialem telewizyjnym Davida Lyncha i Marka Frosta o nazwie Twin Peaks (Miasteczko Twin Peaks).
-            Tytułowy bohater niniejszej gry jest autorem poczytnych powieści. Niestety od dwóch lat Alan nie potrafi napisać nowej książki. Żona pisarza, Alice, postanawia
-            zabrać go na wakacje do malowniczego miasteczka Bright Falls, by odzyskał siły twórcze. Po początkowej sielance ukochana znika w niewyjaśnionych okolicznościach,
-            a Wake wyrusza na jej poszukiwanie. Okazuje się, że Bright Falls to wcale nie bajkowa lokacja, lecz mroczne, pełne złych sił miejsce – jak to, w którym toczy się
-            akcja ostatniego dzieła Alana, thrillera, którego napisania nie może sobie przypomnieć. Zabawa polega na poruszaniu się po wspomnianym miasteczku i jego okolicach,
-            interakcji z mieszkańcami, odnajdywaniu fragmentów napisanej książki i walce bądź ucieczce przed przeciwnikami. W trakcie wyprawy odwiedzamy m.in. latarnię nad
-            jeziorem i przedzieramy się przez gęsty las w górach. Przemieszczamy się zarówno piechotą, jak i za kierownicą kilku pojazdów, m.in. wysłużonego samochodu kombi.
-            Przy okazji obserwujemy wyjątkowo realistyczne efekty pogodowe oraz cykl zmian pór doby. Nocą musimy uważać szczególnie, ponieważ właśnie wtedy materializują się
-            przeróżne upiorne zjawiska, jak choćby opętani przez Mrok mieszkańcy Bright Falls. Przydaje się wówczas źródło światła (np. włączonej latarki, flary, reflektora
-            itp.), które osłabia przeciwników i pozwala na zastosowanie broni palnej. Nietuzinkowy charakter gry podkreśla dopracowana oprawa wizualna. Trójwymiarowy świat
-            prezentuje się bardzo sugestywnie, a gra świateł, nastrojowe efekty dźwiękowe i podkłady muzyczne, stanowią dodatkowy atut Alana Wake’a. W odróżnieniu od wydania
-            na konsolę Xbox 360, edycja na komputery PC posiada od razu załączone dodatki DLC The Signal i The Writer.
-            <br/>
-            <br />Źródło: http://www.gry-online.pl/S016.asp?ID=4961
+            @Model.Games.Description
+            <br />
+            <br />Źródło: @Model.Games.Source
         </div>
     </div>
 
     <div id="detailbottomright">
         <div id="detailbottomrighttitle">
-            Wymagania sprzętowe    
+            Wymagania sprzętowe
         </div>
         <div id="detailbottomrighttext">
-            CPU: Core 2 Duo 2 GHz
-            <br />RAM: 2 GB RAM (4 GB RAM - Vista/7)
-            <br />GPU: 512 MB (GeForce 8800 lub lepsza)
-            <br />HDD: 8 GB
-            <br />OS: Windows XP/Vista/7
+            CPU: @Model.Games.Cpu
+            <br />RAM: @Model.Games.Ram
+            <br />GPU: @Model.Games.Gpu
+            <br />HDD: @Model.Games.Hdd
+            <br />OS: @Model.Games.Os
         </div>
     </div>
     <div style="clear: both;"></div>

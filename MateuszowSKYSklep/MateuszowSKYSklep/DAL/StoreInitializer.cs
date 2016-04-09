@@ -31,7 +31,7 @@ namespace MateuszowSKYSklep.DAL
                 new Genre() {GenreId = 8, Name = "Symulacje",IconFilename = "symulacje.png"}
             };
 
-            genres.ForEach(g => context.Genres.Add(g));
+            genres.ForEach(g => context.Genres.AddOrUpdate(g));
             context.SaveChanges();
 
             var games = new List<Game>
@@ -47,7 +47,7 @@ namespace MateuszowSKYSklep.DAL
                 new Game() {GameId = 9, DeveloperName = "ASCARON Entertainment", GameTitle = "Sacred" , Price=22.38M, MainImageFilename = "9.png", IsPreOrder = false, DatePremiere = new DateTime(2004, 09, 22), GenreId = 2, Cpu = "Pentium 4 1.4 GHz", Ram="512 MB", Gpu="64 MB akcelerator 3D", Hdd = "2.5 GB", Os = "Windows 98/XP", Source="http://www.gry-online.pl/S016.asp?ID=1925", Description = "Gra z gatunku action/cRPG, za powstanie której odpowiada niemiecka firma Ascaron Entertainment, znana m.in. z takich tytułów jak: Port Royale i Patrician II: Quest for Power. Oferuje graczom, miłośnikom tego typu rozrywki, obszerny i różnorodny świat fantasy, Ancaria, składający się z szesnastu połączonych ze sobą i rządzących się własnymi zasadami regionów oraz rozbudowaną fabułę złożoną z ponad 30 głównych misji. Oprócz tego znajdziemy tu blisko 200 zadań pobocznych, których wykonanie nie ma bezpośredniego wpływu na wątek przewodni. Gracz ma dużą swobodę w zwiedzaniu świata gry - 70% lokacji dostępnych jest od samego początku, a pozostałe 30% odkrywa się w miarę wykonywania kolejnych zadań. Znajdziemy tu około 20 różnego typu otoczeń: lasy, tereny skute lodem, pustynie, góry, miasta, itd. Podróżując przez krainy natkniemy się na dużo różnorodnych przeciwników oraz NPC-ty, które dynamicznie reagują na nasze poczynania, np. po wykonaniu określonego zadania przydzielonego nam w danej krainie, zamieszkujący ją kupcy zaoferują nam lepsze ceny. Do naszej dyspozycji oddanych zostało sześć odmiennych klas postaci różniących się m.in. umiejętnościami i zdolnościami w walce (to: Gladiator, Wizard, Dark Elf, Forest Elf, Seraphim oraz Vampire Lady). Sacred oferuje intuicyjny i prosty w obsłudze system walki (do dziesięciu konfigurowalnych slotów akcji - dla broni, czarów i specjalnych ciosów), a poza opcją gry jednoosobowej istnieje możliwość gry wieloosobowej do 16 osób w sieci lokalnej i Internecie (dwa tryby: Co-operative i Hack 'n' Slay)."}
             };
 
-            games.ForEach(h => context.Games.Add(h));
+            games.ForEach(h => context.Games.AddOrUpdate(h));
             context.SaveChanges();
         }
     }

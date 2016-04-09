@@ -24,5 +24,13 @@ namespace MateuszowSKYSklep.Infrastructure
             var absolutePath = helper.Content(path);
             return absolutePath;
         }
+
+        public static string GameScreenPath(this UrlHelper helper, int id, string gameScreenname)
+        {
+            var gameScreenFolder = AppConfig.GameScreensFolderRelative;
+            var path = Path.Combine(gameScreenFolder, id.ToString(), gameScreenname);
+            var absolutePath = helper.Content(path);
+            return absolutePath;
+        }
     }
 }

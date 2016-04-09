@@ -205,7 +205,6 @@ nav#genre ul li a:hover
     width: 960px;
     height: 480px;
     margin: 15px auto;
-    background-image: url('Screens/1/ss1.jpg');
     background-size: cover;
 }
 
@@ -274,6 +273,7 @@ nav#genre ul li a:hover
     padding-top: 20px;
     padding-left: 10px;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
 }
 
 #leftminiaturebtn 
@@ -286,6 +286,7 @@ nav#genre ul li a:hover
     padding-top: 20px;
     padding-left: 10px;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
 }
 
 #rightminiaturebtn img
