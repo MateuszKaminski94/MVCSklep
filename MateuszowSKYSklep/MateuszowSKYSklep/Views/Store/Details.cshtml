@@ -2,7 +2,7 @@
 @using MateuszowSKYSklep.Infrastructure
 
 @{
-    ViewBag.Title = "Game details";
+    ViewBag.Title = Model.Games.GameTitle;
 }
 
 <div id="detailtop" style="background-image: url(@Url.GameScreenPath(Model.Games.GameId,Path.GetFileName(Model.Links.ElementAt(0))));">
@@ -16,7 +16,7 @@
             </div>
             <div id="topinfocontenttext">
                 <br />Studio: @Model.Games.DeveloperName
-                <br />Data premiery: @Model.Games.DatePremiere
+                <br />Data premiery: @Model.Games.DatePremiere.Day.ToString()/@Model.Games.DatePremiere.Month.ToString()/@Model.Games.DatePremiere.Year
 
                 <div id="priceinfo">
                     @Model.Games.Price

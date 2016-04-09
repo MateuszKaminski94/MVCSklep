@@ -31,27 +31,30 @@
 </nav>
 
 
-
+<div id="detailbottomlefttitle">
+    Preordery
+</div>
 
 <div id="slider">
     <div id="slider-content">
         <div id="slider-left">
-            <img src="@Url.Content("~/Content/Images/przycisklewo.png")" />
+            <img src="@Url.Content("~/Content/Images/przycisklewo.png")"/>
         </div>
 
-        <ul>
+        <ul id="preordercontainer">
             @foreach (var game in Model.PreOrders)
             {
-                <li>
+                <li class="preorderimage">
                     <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
-                        <img src="@Url.GameImagePath(game.MainImageFilename)" style="float: left;" />
+                        <img src="@Url.GameScreenPath(game.GameId, "ss1.jpg")" style="float: left;"/>
                     </a>
                 </li>
             }
         </ul>
+        <div style="clear: both;"></div>
 
         <div id="slider-right">
-            <img src="@Url.Content("~/Content/Images/przyciskprawo.png")" />
+            <img src="@Url.Content("~/Content/Images/przyciskprawo.png")"/>
         </div>
     </div>
 </div>

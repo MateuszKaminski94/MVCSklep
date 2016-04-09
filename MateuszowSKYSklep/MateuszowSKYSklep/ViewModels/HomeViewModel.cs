@@ -12,6 +12,8 @@ namespace MateuszowSKYSklep.ViewModels
 
         public IEnumerable<Game> Randoms { get; set; }
         
-        public IEnumerable<Genre> Genres { get; set; }  
+        public IEnumerable<Genre> Genres { get; set; }
+
+        //public IEnumerable<string> Links { get; set; }
     }
 }
