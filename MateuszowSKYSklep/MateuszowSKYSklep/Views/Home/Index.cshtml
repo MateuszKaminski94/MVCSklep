@@ -30,12 +30,12 @@
 
 </nav>
 
-
-<div id="detailbottomlefttitle">
+<div id="slidertitle">
     Preordery
 </div>
 
 <div id="slider">
+
     <div id="slider-content">
         <div id="slider-left">
             <img src="@Url.Content("~/Content/Images/przycisklewo.png")"/>
@@ -59,15 +59,22 @@
     </div>
 </div>
 
+<div id="randomtitle">
+    Wybrane dla Ciebie
+</div>
+
 <div id="random">
     <ul>
         @foreach (var game in Model.Randoms)
         {
-            <li>
-                <a href="@Url.Action("Details","Store", new {id = game.GameId} )">
-                    <img src="@Url.GameImagePath(game.MainImageFilename)" />
-                </a>
-            </li>
+        <li>
+            <a href="@Url.Action("Details","Store", new {id = game.GameId} )">
+                <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)" />
+                <div class="randomsmalltitle">
+                    @game.GameTitle
+                </div>
+            </a>
+        </li>
         }
         <div style="clear: both;"></div>
     </ul>

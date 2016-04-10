@@ -5,7 +5,7 @@
     ViewBag.Title = Model.Games.GameTitle;
 }
 
-<div id="detailtop" style="background-image: url(@Url.GameScreenPath(Model.Games.GameId,Path.GetFileName(Model.Links.ElementAt(0))));">
+<div id="detailtop" style="background-image: url(@Url.GameScreenPath(Model.Games.GameId,Model.Games.MainImageFilename));">
     <div id="detailtitle">
         @Model.Games.GameTitle
     </div>

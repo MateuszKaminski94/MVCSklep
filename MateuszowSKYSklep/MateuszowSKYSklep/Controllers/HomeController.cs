@@ -19,7 +19,7 @@ namespace MateuszowSKYSklep.Controllers
         {
             var genres = db.Genres.ToList();
             var preOrders = db.Games.Where(a => !a.IsHidden && a.IsPreOrder).OrderByDescending(a => a.DatePremiere).Take(3).ToList();
-            var randoms = db.Games.Where(a => !a.IsHidden).OrderBy(a => Guid.NewGuid()).Take(4).ToList();
+            var randoms = db.Games.Where(a => !a.IsHidden).OrderBy(a => Guid.NewGuid()).Take(8).ToList();
             //var links = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/" + preOrders..ToString()));
             /*foreach (var preorder in preOrders)
             {
