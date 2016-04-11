@@ -1,4 +1,5 @@
-﻿@using MateuszowSKYSklep.Models
+﻿@using System.Web.Optimization
+@using MateuszowSKYSklep.Models
 @using MateuszowSKYSklep.Infrastructure
 @model MateuszowSKYSklep.ViewModels.HomeViewModel
 
@@ -6,7 +7,6 @@
 @{
     ViewBag.Title = "Strona glowna MateuszowSKY";
 }
-
 
 <nav id="genre">
     <ul>
@@ -67,14 +67,14 @@
     <ul>
         @foreach (var game in Model.Randoms)
         {
-        <li>
-            <a href="@Url.Action("Details","Store", new {id = game.GameId} )">
-                <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)" />
-                <div class="randomsmalltitle">
-                    @game.GameTitle
-                </div>
-            </a>
-        </li>
+            <li>
+                <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
+                    <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)"/>
+                    <div class="randomsmalltitle">
+                        @game.GameTitle
+                    </div>
+                </a>
+            </li>
         }
         <div style="clear: both;"></div>
     </ul>

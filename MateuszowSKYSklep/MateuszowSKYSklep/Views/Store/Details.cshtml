@@ -1,11 +1,26 @@
 ﻿@model MateuszowSKYSklep.ViewModels.DetailsViewModel
+@using System.Web.Optimization
 @using MateuszowSKYSklep.Infrastructure
 
 @{
     ViewBag.Title = Model.Games.GameTitle;
 }
 
-<div id="detailtop" style="background-image: url(@Url.GameScreenPath(Model.Games.GameId,Model.Games.MainImageFilename));">
+<div id="detailtop">
+    <div id="detailtopbackground">
+        <ul id="detailtopbackgroundes">
+            <li class="detailtopbackgrounde">
+                <img src="@Url.GameScreenPath(Model.Games.GameId, Model.Games.MainImageFilename)"/>
+            </li>
+            <li class="detailtopbackgrounde">
+                <img src="@Url.GameScreenPath(Model.Games.GameId, Model.Games.MainImageFilename)"/>
+            </li>
+            <li class="detailtopbackgrounde">
+                <img src="@Url.GameScreenPath(Model.Games.GameId, Model.Games.MainImageFilename)" />
+            </li>
+        </ul>
+    </div>
+
     <div id="detailtitle">
         @Model.Games.GameTitle
     </div>
@@ -36,7 +51,7 @@
             {
                 var fileName = Path.GetFileName(fullPath);
                 <li class="topminiature">
-                    <img src="@Url.GameScreenPath(Model.Games.GameId,fileName)" />
+                    <img src="@Url.GameScreenPath(Model.Games.GameId, fileName)" />
                 </li>
             }
         </ul>
@@ -55,8 +70,8 @@
         </div>
         <div id="detailbottomlefttext">
             @Model.Games.Description
-            <br />
-            <br />Źródło: @Model.Games.Source
+            <br/>
+            <br/>Źródło: @Model.Games.Source
         </div>
     </div>
 
@@ -66,10 +81,10 @@
         </div>
         <div id="detailbottomrighttext">
             CPU: @Model.Games.Cpu
-            <br />RAM: @Model.Games.Ram
-            <br />GPU: @Model.Games.Gpu
-            <br />HDD: @Model.Games.Hdd
-            <br />OS: @Model.Games.Os
+            <br/>RAM: @Model.Games.Ram
+            <br/>GPU: @Model.Games.Gpu
+            <br/>HDD: @Model.Games.Hdd
+            <br/>OS: @Model.Games.Os
         </div>
     </div>
     <div style="clear: both;"></div>

@@ -277,6 +277,36 @@ nav#genre ul li a:hover
     background-size: cover;
 }
 
+#detailtopbackground  
+{
+    height: 480px;
+    width: 960px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#detailtopbackground img 
+{
+    height: 480px;
+    width: 960px;
+}
+
+.detailtopbackgrounde  
+{
+    height: 480px;
+    width: 960px;
+    float: left;
+    position: relative;
+}
+
+#detailtopbackgroundes  
+{
+    height: 480px;
+    width: 2880px;
+    list-style: none;
+    margin-left: -960px;
+}
+
 #detailtitle 
 {
     padding: 10px 60px 10px 30px;
