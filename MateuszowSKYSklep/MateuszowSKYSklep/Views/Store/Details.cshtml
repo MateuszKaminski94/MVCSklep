@@ -6,6 +6,28 @@
     ViewBag.Title = Model.Games.GameTitle;
 }
 
+<nav id="genre">
+    <ul>
+        @foreach (var genre in Model.Genres)
+            {
+            <li>
+                <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToLower()})">
+                    <div class="genres-img">
+                        <img src="@Url.GenreIconPath(genre.IconFilename)" />
+                    </div>
+                    <div class="genres-text">
+                        @genre.Name
+                    </div>
+                </a>
+
+            </li>
+        }
+
+        <div style="clear: both;"></div>
+    </ul>
+
+</nav>
+
 <div id="detailtop">
     <div id="detailtopbackground">
         <ul id="detailtopbackgroundes">
@@ -24,16 +46,16 @@
     <div id="detailtitle">
         @Model.Games.GameTitle
     </div>
-    <div id="topinfo">
-        <div id="topinfocontent">
-            <div id="addtobasketbtn">
+    <div id="detailtopinfo">
+        <div id="detailtopinfocontent">
+            <div id="detailaddtobasket">
                 Dodaj do koszyka
             </div>
-            <div id="topinfocontenttext">
+            <div id="detailtopinfocontenttext">
                 <br />Studio: @Model.Games.DeveloperName
                 <br />Data premiery: @Model.Games.DatePremiere.Day.ToString()/@Model.Games.DatePremiere.Month.ToString()/@Model.Games.DatePremiere.Year
 
-                <div id="priceinfo">
+                <div id="detailpriceinfo">
                     @Model.Games.Price
                     $
                 </div>
@@ -41,23 +63,23 @@
         </div>
     </div>
 
-    <div id="leftminiaturebtn">
+    <div id="detailleftminiaturebtn">
         <img src="~/Content/Images/przycisklewo.png" />
     </div>
 
-    <div id="topminiaturer">
-        <ul id="topminiatures">
+    <div id="detailtopminiaturer">
+        <ul id="detailtopminiatures">
             @foreach (var fullPath in Model.Links)
             {
                 var fileName = Path.GetFileName(fullPath);
-                <li class="topminiature">
+                <li class="detailtopminiature">
                     <img src="@Url.GameScreenPath(Model.Games.GameId, fileName)" />
                 </li>
             }
         </ul>
         <div style="clear: both;"></div>
     </div>
-    <div id="rightminiaturebtn">
+    <div id="detailrightminiaturebtn">
         <img src="~/Content/Images/przyciskprawo.png" />
     </div>
 
@@ -65,7 +87,7 @@
 
 <div id="detailbottom">
     <div id="detailbottomleft">
-        <div id="detailbottomlefttitle">
+        <div class="detailbottomtitle">
             Opis
         </div>
         <div id="detailbottomlefttext">
@@ -76,7 +98,7 @@
     </div>
 
     <div id="detailbottomright">
-        <div id="detailbottomrighttitle">
+        <div class="detailbottomtitle">
             Wymagania sprzętowe
         </div>
         <div id="detailbottomrighttext">
@@ -88,4 +110,25 @@
         </div>
     </div>
     <div style="clear: both;"></div>
+</div>
+
+<div id="randomtitle">
+    Inni wybrali także
+</div>
+
+<div id="random">
+    <ul>
+        @foreach (var game in Model.Randoms)
+        {
+            <li>
+                <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
+                    <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)" />
+                    <div class="randomsmalltitle">
+                        @game.GameTitle
+                    </div>
+                </a>
+            </li>
+        }
+        <div style="clear: both;"></div>
+    </ul>
 </div>

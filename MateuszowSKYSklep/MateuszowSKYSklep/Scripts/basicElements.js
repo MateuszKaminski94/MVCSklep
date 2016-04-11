@@ -2,8 +2,7 @@
     $('#show').click(function () {
         var menu = $('#genre');
         var triangle = $('#show');
-        if (menu.is(':hidden'))
-        {
+        if (menu.is(':hidden')) {
             menu.slideDown();
             /*triangle.animate({ borderSpacing: 90 }, {
                 step: function (now, fx) {
@@ -14,8 +13,7 @@
                 duration: 'slow'
             }, 'linear');*/
         }
-        else
-        {
+        else {
             menu.slideUp();
             /*triangle.animate({ borderSpacing: -90 }, {
                 step: function (now, fx) {
@@ -27,6 +25,7 @@
             }, 'linear');*/
         }
     });
+
 });
 
 

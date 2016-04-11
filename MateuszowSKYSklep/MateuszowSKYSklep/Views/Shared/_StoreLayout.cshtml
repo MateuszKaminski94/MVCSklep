@@ -9,32 +9,33 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
 
 </head>
 <body>
 
     <header>
-        <div id="header">
-            <div id="show">
-                <img src="@Url.Content("~/Content/Images/kategorie.png")" />
+        <div id="nav">
+            <div id="header">
+                <div id="show">
+                    <img src="@Url.Content("~/Content/Images/kategorie.png")" />
+                </div>
+                <div id="search">
+                    <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
+                </div>
+                <div id="logo">
+                    <a href="@Url.Content("~/")">
+                        <img src="@Url.Content("~/Content/Images/logo.png")" />
+                    </a>
+                </div>
+                <div id="user">
+                    <img src="@Url.Content("~/Content/Images/logowanie.png")" />
+                </div>
+                <div id="basket">
+                    <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                </div>
+                <div style="clear: both;"></div>
             </div>
-            <div id="search">
-                <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
-            </div>
-            <div id="logo">
-                <a href="@Url.Content("~/")">
-                    <img src="@Url.Content("~/Content/Images/logo.png")" />
-                </a>
-            </div>
-            <div id="user">
-                <img src="@Url.Content("~/Content/Images/logowanie.png")" />
-            </div>
-            <div id="basket">
-                <img src="@Url.Content("~/Content/Images/koszyk.png")" />
-            </div>
-            <div style="clear: both;"></div>
         </div>
     </header>
 
@@ -60,6 +61,7 @@
             </ul>
         </nav>
     </footer>
+
 
     @Scripts.Render("~/Bundles/jquery")
     @RenderSection("ScriptsBottom", required: false)

@@ -20,12 +20,18 @@ namespace MateuszowSKYSklep.Controllers
 
         public ActionResult Details(int id)
         {
+            var genres = db.Genres.ToList();
+
             var game = db.Games.Where(a => a.GameId == id).Take(1).Single();
+
+            var randoms = db.Games.Where(a => !a.IsHidden && a.GameId!=game.GameId).OrderBy(a => Guid.NewGuid()).Take(4).ToList();
 
             var links = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/"+id.ToString()));
 
             var vm = new DetailsViewModel()
             {
+                Genres = genres,
+                Randoms = randoms,
                 Games = game,
                 Links = links
             };

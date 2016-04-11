@@ -1,7 +1,7 @@
 ﻿$(function() {
     var interval;
     var pause = 5000;
-    var animationSpeed = 1000;
+    var animationSpeed = 1500;
 
     var end = true;
 
@@ -30,7 +30,7 @@
 
     $('#preordercontainer').on('mouseenter', stopSlider).on('mouseleave', startSlider);
 
-    $('#slider-left').click(function() {
+    $('#preorderleft').click(function () {
         $('#preordercontainer').animate({ 'margin-left': '+=960' }, animationSpeed, function() {
 
             $('#preordercontainer').prepend($('.preorderimage:last'));
@@ -39,7 +39,7 @@
         });
     });
 
-    $('#slider-right').click(function() {
+    $('#preorderright').click(function () {
         $('#preordercontainer').animate({ 'margin-left': '-=960' }, animationSpeed, function() {
 
             $('#preordercontainer').append($('.preorderimage:first'));

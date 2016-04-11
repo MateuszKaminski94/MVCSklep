@@ -8,6 +8,10 @@ namespace MateuszowSKYSklep.ViewModels
 {
     public class DetailsViewModel
     {
+        public IEnumerable<Genre> Genres { get; set; }
+
+        public IEnumerable<Game> Randoms { get; set; }
+
         public Game Games { get; set; }
 
         public IEnumerable<string> Links { get; set; }

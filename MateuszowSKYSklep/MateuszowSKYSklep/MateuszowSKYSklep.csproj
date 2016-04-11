@@ -142,6 +142,8 @@
     <Content Include="Content\Images\przycisklewo.png" />
     <Content Include="Content\Images\przyciskprawo.png" />
     <Content Include="Content\Images\wyszukiwarka.png" />
+    <Content Include="Content\detailsSite.css" />
+    <Content Include="Content\indexSite.css" />
     <Content Include="Content\Screens\1\ss1.jpg" />
     <Content Include="Content\Screens\1\ss10.jpg" />
     <Content Include="Content\Screens\1\ss11.jpg" />
@@ -249,7 +251,7 @@
     <Content Include="Content\Screens\9\ss7.jpg" />
     <Content Include="Content\Screens\9\ss8.jpg" />
     <Content Include="Content\Screens\9\ss9.jpg" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\mainSite.css" />
     <Content Include="Content\Genre-icons\akcji.png" />
     <Content Include="Content\Genre-icons\fabularne.png" />
     <Content Include="Content\Genre-icons\indie.png" />
