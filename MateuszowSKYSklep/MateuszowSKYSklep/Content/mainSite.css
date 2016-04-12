@@ -1,0 +1,165 @@
+﻿html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+@font-face 
+{
+    font-family: 'Ubuntu-L';
+    src: url('../Fonts/Ubuntu-L.ttf') format('truetype');
+}
+
+body 
+{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #554949;    
+    font-family: 'Ubuntu-L';
+    padding-top: 76px;
+}
+
+#nav 
+{
+    height: 76px;
+    width: 100%; 
+    background-color: #32353a;  
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header 
+{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#show
+{
+    float: left;
+    height: 48px;
+    padding: 14px;
+    width: 48px;
+}
+
+#search
+{
+    float: left;
+    height: 50px;
+    padding: 13px;
+    width: 280px;
+}
+
+#logo
+{
+    float: left;
+    height: 50px;
+    padding: 13px;
+}
+
+#user
+{
+    float: right;
+    height: 50px;
+    padding: 13px;
+}
+
+#basket
+{
+    float: right;
+    height: 46px;
+    padding: 15px;
+}
+
+ul
+{
+    list-style-type: none;   
+}
+
+nav#genre
+{
+    font-size: 22px; 
+    background-color: #494d55;
+    padding: 4px;
+}
+
+nav#genre ul li a
+{
+    height: 70px;
+    width: 240px;
+    background-color: #32353a;
+    float: left;
+    margin: 4px;
+    text-decoration: none;
+    color: #ef4c45;
+}
+
+nav#genre ul li a:hover 
+{
+    margin: 3px;
+    height: 70px;
+    width: 240px;
+    background-color: #43464b;
+    border: 1px solid #ef4c45;
+}
+
+.genres-img img 
+{
+    height: 40px;
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+}
+
+.genres-img 
+{
+    
+    height: 70px;
+    width: 70px;
+    float: left;
+}
+
+.genres-text 
+{
+    margin-top: 22px;
+}
+
+#footer 
+{    
+    height: 75px;
+    background-color: #32353a;    
+}
+
+#footer ul li a
+{
+    font-size: 20px;
+    float: left;
+    text-decoration: none;
+    color: #ef4c45;
+    display: block;
+    height: 30px;
+    margin: 2px 5px;
+    padding: 20px;
+}
+
+#last-foot 
+{
+    float: right;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ef4c45;
+    display: block;
+    height: 30px;
+    margin: 2px 5px;
+    padding: 20px;
+}

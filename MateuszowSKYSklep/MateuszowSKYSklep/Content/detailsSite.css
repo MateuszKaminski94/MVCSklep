@@ -1,0 +1,224 @@
+﻿#detailtop 
+{
+    position: relative;
+    width: 960px;
+    height: 480px;
+    margin: 15px auto;
+}
+
+#detailtopbackground  
+{
+    height: 480px;
+    width: 960px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#detailtopbackgroundes  
+{
+    height: 480px;
+    width: 2880px;
+    list-style: none;
+    margin-left: -960px;
+}
+
+.detailtopbackgrounde  
+{
+    height: 480px;
+    width: 960px;
+    float: left;
+    position: relative;
+}
+
+.detailtopbackgrounde img 
+{
+    height: 480px;
+    width: 960px;
+}
+
+#detailtitle 
+{
+    padding: 10px 60px 10px 30px;
+    top: 40px;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 30px;
+    color: #ffffff;
+    position: absolute;  
+}
+
+#detailtopminiaturer 
+{
+    left: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 880px;
+    height: 110px;    
+    background-color: rgba(0,0,0,0.4);
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+#detailtopminiatures
+{
+    display: block;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.detailtopminiature 
+{
+    height: 100px;
+    width: 166px;
+    list-style-type: none;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;         
+}
+
+.detailtopminiature img 
+{
+    height: 100px;
+    width: 166px;
+    cursor: pointer;
+}
+
+#detailrightminiaturebtn 
+{
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#detailleftminiaturebtn 
+{
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#detailrightminiaturebtn img
+{
+    height: 80px;
+}
+
+#detailleftminiaturebtn img
+{
+    height: 80px;    
+}
+
+#detailtopinfo 
+{
+    float: right;
+    width: 400px;
+    height: 330px;
+    /*background-color: rgba(0,0,0,0.4);*/
+    padding-top: 30px;
+}
+
+#detailtopinfocontent 
+{
+    right: 25px;
+    background-color: #32353a;
+    width: 350px;
+    height: 270px;
+    padding-top: 30px;
+    position: absolute;
+}
+
+#detailaddtobasket
+{
+    width: 300px;
+    height: 50px;
+    background-color: #ef4c45;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+#detailtopinfocontenttext 
+{
+    font-size: 15px;
+    color: #ffffff;
+    margin-left: 40px;   
+    line-height: 30px; 
+}
+
+#detailpriceinfo 
+{
+    background-image: url('Images/pricebackground.png');
+    float: right;
+    height: 52px;
+    width: 130px;
+    position: absolute;
+    bottom: 10px;
+    right: -5px;
+    font-size: 30px;
+    padding-top: 18px;
+    text-align: right;
+    padding-right: 15px;
+}
+
+#detailbottomleft 
+{
+    width: 650px;  
+    float: left;
+    color: #ffffff;
+}
+
+#detailbottomlefttext 
+{
+    width: 590px;  
+    background-color: #32353a;    
+    padding: 30px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+#detailbottomright 
+{
+    width: 335px;  
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: #ffffff;
+}
+
+.detailbottomtitle 
+{
+    width: 300px;
+    height: 40px;
+    background-color: #ef4c45;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;        
+}
+
+#detailbottomrighttext 
+{
+    width: 315px;  
+    background-color: #32353a;    
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: justify;
+}
