@@ -13,11 +13,16 @@ namespace MateuszowSKYSklep.App_Start
         {
             bundles.Add(new ScriptBundle("~/Bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui-{version}.js",
                         "~/Scripts/basicElements.js",
                         "~/Scripts/indexElements.js",
                         "~/Scripts/detailsElements.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/themes/base/core.css",
+                      "~/Content/themes/base/autocomplete.css",
+                      "~/Content/themes/base/theme.css",
+                      "~/Content/themes/base/menu.css",
                       "~/Content/mainSite.css",
                       "~/Content/indexSite.css",
                       "~/Content/detailsSite.css"));

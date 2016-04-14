@@ -22,6 +22,12 @@
                 </div>
                 <div id="search">
                     <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
+
+                    <form id="search-form" method="get" >
+                        <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions","Home")" placeholder="Wprowadź tytuł gry..." />
+                        <input type="submit" value="" />
+                    </form>
+
                 </div>
                 <div id="logo">
                     <a href="@Url.Content("~/")">
@@ -64,7 +70,6 @@
 
 
     @Scripts.Render("~/Bundles/jquery")
-    @*@RenderSection("ScriptsBottom", required: false)*@
-    
+
 </body>
 </html>

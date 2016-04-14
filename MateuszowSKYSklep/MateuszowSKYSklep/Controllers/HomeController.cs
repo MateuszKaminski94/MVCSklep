@@ -47,5 +47,15 @@ namespace MateuszowSKYSklep.Controllers
 
             return PartialView("_GenresMenu", genres);
         }
+
+        public ActionResult AlbumsSuggestions(string term)
+        {
+            var albums =
+                this.db.Games.Where(g => !g.IsHidden && g.GameTitle.ToLower().Contains(term.ToLower()))
+                    .Take(5)
+                    .Select(g => new {label = g.GameTitle});
+
+            return Json(albums, JsonRequestBehavior.AllowGet);
+        }
     }
 }
