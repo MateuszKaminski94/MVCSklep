@@ -1,0 +1,14 @@
+﻿@using MateuszowSKYSklep.Infrastructure
+@model MateuszowSKYSklep.ViewModels.CartViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+@Html.Action("GenresMenu", "Home")
+
+@foreach (var cartItem in Model.CartItems)
+{
+    @cartItem.Game.GameTitle
+}

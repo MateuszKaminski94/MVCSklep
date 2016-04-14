@@ -17,7 +17,6 @@ namespace MateuszowSKYSklep.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var genres = db.Genres.ToList();
             var preOrders = db.Games.Where(a => !a.IsHidden && a.IsPreOrder).OrderByDescending(a => a.DatePremiere).Take(3).ToList();
             var randoms = db.Games.Where(a => !a.IsHidden).OrderBy(a => Guid.NewGuid()).Take(8).ToList();
             //var links = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/" + preOrders..ToString()));
@@ -28,7 +27,6 @@ namespace MateuszowSKYSklep.Controllers
 
             var vm = new HomeViewModel()
             {
-                Genres = genres,
                 PreOrders = preOrders,
                 Randoms = randoms
                 //Links = links
@@ -40,6 +38,14 @@ namespace MateuszowSKYSklep.Controllers
         public ActionResult StaticContent(string viewname)
         {
             return View(viewname);
+        }
+
+        [ChildActionOnly]
+        public ActionResult GenresMenu()
+        {
+            var genres = db.Genres.ToList();
+
+            return PartialView("_GenresMenu", genres);
         }
     }
 }

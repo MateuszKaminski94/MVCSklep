@@ -6,27 +6,7 @@
     ViewBag.Title = Model.Games.GameTitle;
 }
 
-<nav id="genre">
-    <ul>
-        @foreach (var genre in Model.Genres)
-            {
-            <li>
-                <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToLower()})">
-                    <div class="genres-img">
-                        <img src="@Url.GenreIconPath(genre.IconFilename)" />
-                    </div>
-                    <div class="genres-text">
-                        @genre.Name
-                    </div>
-                </a>
-
-            </li>
-        }
-
-        <div style="clear: both;"></div>
-    </ul>
-
-</nav>
+@Html.Action("GenresMenu","Home")
 
 <div id="detailtop">
     <div id="detailtopbackground">
@@ -49,15 +29,16 @@
     <div id="detailtopinfo">
         <div id="detailtopinfocontent">
             <div id="detailaddtobasket">
-                Dodaj do koszyka
+                <a href="@Url.Action("AddToCart", "Cart", new {id = Model.Games.GameId})">
+                    Dodaj do koszyka
+                </a>
             </div>
             <div id="detailtopinfocontenttext">
                 <br />Studio: @Model.Games.DeveloperName
                 <br />Data premiery: @Model.Games.DatePremiere.Day.ToString()/@Model.Games.DatePremiere.Month.ToString()/@Model.Games.DatePremiere.Year
 
                 <div id="detailpriceinfo">
-                    @Model.Games.Price
-                    $
+                    @String.Format("{0:0.##}",Model.Games.Price)$
                 </div>
             </div>
         </div>

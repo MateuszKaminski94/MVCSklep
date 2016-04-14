@@ -20,9 +20,7 @@ namespace MateuszowSKYSklep.Controllers
 
         public ActionResult Details(int id)
         {
-            var genres = db.Genres.ToList();
-
-            var game = db.Games.Where(a => a.GameId == id).Take(1).Single();
+            var game = db.Games.Find(id);
 
             var randoms = db.Games.Where(a => !a.IsHidden && a.GameId!=game.GameId).OrderBy(a => Guid.NewGuid()).Take(4).ToList();
 
@@ -30,7 +28,6 @@ namespace MateuszowSKYSklep.Controllers
 
             var vm = new DetailsViewModel()
             {
-                Genres = genres,
                 Randoms = randoms,
                 Games = game,
                 Links = links
@@ -41,7 +38,11 @@ namespace MateuszowSKYSklep.Controllers
 
         public ActionResult List(string genrename)
         {
-            return View();
+            var genre = db.Genres.Include("Games").Single(g => g.Name.ToUpper() == genrename.ToUpper());
+            var games = genre.Games.ToList();
+
+
+            return View(games);
         }
     }
 }

@@ -152,6 +152,12 @@
     cursor: pointer;
 }
 
+#detailaddtobasket a 
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
 #detailtopinfocontenttext 
 {
     font-size: 15px;

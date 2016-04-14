@@ -1,0 +1,24 @@
+﻿@using MateuszowSKYSklep.Infrastructure
+@model IEnumerable<MateuszowSKYSklep.Models.Genre>
+    
+<nav id="genre">
+    <ul>
+        @foreach (var genre in Model)
+            {
+            <li>
+                <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToString() })">
+                    <div class="genres-img">
+                        <img src="@Url.GenreIconPath(genre.IconFilename)" />
+                    </div>
+                    <div class="genres-text">
+                        @genre.Name
+                    </div>
+                </a>
+
+            </li>
+        }
+
+        <div style="clear: both;"></div>
+    </ul>
+
+</nav>
