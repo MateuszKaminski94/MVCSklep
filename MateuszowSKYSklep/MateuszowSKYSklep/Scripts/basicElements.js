@@ -26,6 +26,29 @@
         }
     });
 
+    var selectview = function (id) {
+
+        window.location.href = 'game-'+id+'.html';
+    };
+
+    var setupAutoComplete = function () {
+        var $input = $(this);
+
+        var options = {
+            source: $input.attr("data-autocomplete-source"),
+            select: function (event, ui) {
+                $input = $(this);
+                $input.val(ui.item.label);
+                var $form = $input.parents("form:first");
+                $form.submit(selectview(ui.item.id));
+            }
+        };
+
+        $input.autocomplete(options);
+    };
+
+    $('#search-filter').each(setupAutoComplete);
+
 });
 
 
