@@ -48,5 +48,24 @@ namespace MateuszowSKYSklep.Controllers
         {
             return shoppingCartManager.GetCartItemsCount();
         }
+
+        public ActionResult RemoveFromCart(int gameid)
+        {
+            ShoppingCartManager shoppingCartManager = new ShoppingCartManager(this.sessionManager, this.db);
+
+            int itemCount = shoppingCartManager.RemoveFromCart(gameid);
+            int cartItemsCount = shoppingCartManager.GetCartItemsCount();
+            decimal cartTotal = shoppingCartManager.GetCartTotalPrice();
+
+            var result = new CartRemoveViewModel
+            {
+                RemoveItemId = gameid,
+                RemovedItemCount = itemCount,
+                CartTotal = cartTotal,
+                CartItemsCount = cartItemsCount
+            };
+
+            return Json(result);
+        }
     }
 }

@@ -38,7 +38,8 @@
                     <img src="@Url.Content("~/Content/Images/logowanie.png")" />
                 </div>
                 <div id="basket">
-                    <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                    <img src="@Url.Content("~/Content/Images/koszyk.png")"/>
+                    @Html.Action("GetCartItemsCount","Cart")
                 </div>
                 <div style="clear: both;"></div>
             </div>

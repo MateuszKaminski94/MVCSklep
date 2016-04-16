@@ -16,7 +16,8 @@ namespace MateuszowSKYSklep.App_Start
                         "~/Scripts/jquery-ui-{version}.js",
                         "~/Scripts/basicElements.js",
                         "~/Scripts/indexElements.js",
-                        "~/Scripts/detailsElements.js"));
+                        "~/Scripts/detailsElements.js",
+                        "~/Scripts/cartElements.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/themes/base/core.css",
@@ -25,6 +26,7 @@ namespace MateuszowSKYSklep.App_Start
                       "~/Content/themes/base/menu.css",
                       "~/Content/mainSite.css",
                       "~/Content/indexSite.css",
+                      "~/Content/cartSite.css",
                       "~/Content/detailsSite.css"));
         }
     }

@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cartSite.css" />
     <Content Include="Content\detailsSite.css" />
     <Content Include="Content\Images\kategorie.png" />
     <Content Include="Content\Images\koszyk.png" />
@@ -294,6 +295,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\cartElements.js" />
     <Content Include="Scripts\detailsElements.js" />
     <Content Include="Scripts\indexElements.js" />
     <Content Include="Scripts\basicElements.js" />
@@ -329,6 +331,7 @@
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CartRemoveViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\DetailsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
