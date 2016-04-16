@@ -24,7 +24,7 @@
                     <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
 
                     <form id="search-form">
-                        <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions","Home")" placeholder="Wprowadź tytuł gry..." />
+                        <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions", "Home")" placeholder="Wprowadź tytuł gry..." />
                         @*<input type="submit" value="K" />*@
                     </form>
 
@@ -35,16 +35,19 @@
                     </a>
                 </div>
                 <div id="user">
-                    <img src="@Url.Content("~/Content/Images/logowanie.png")" />
+                    <img src="@Url.Content("~/Content/Images/logowanie.png")"/>
+                    @Html.Partial("_LoginPartial")
                 </div>
                 <div id="basket">
-                    <img src="@Url.Content("~/Content/Images/koszyk.png")"/>
-                    @Html.Action("GetCartItemsCount","Cart")
+                    <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                    @Html.Action("GetCartItemsCount", "Cart")
                 </div>
                 <div style="clear: both;"></div>
             </div>
         </div>
     </header>
+
+    @Html.Action("GenresMenu","Home")
 
     <div>
 

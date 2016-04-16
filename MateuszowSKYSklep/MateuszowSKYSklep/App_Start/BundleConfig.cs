@@ -14,6 +14,8 @@ namespace MateuszowSKYSklep.App_Start
             bundles.Add(new ScriptBundle("~/Bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery-ui-{version}.js",
+                        "~/Scripts/jquery.validate.js",
+                        "~/Scripts/jquery.validate.unobtrusive.js",
                         "~/Scripts/basicElements.js",
                         "~/Scripts/indexElements.js",
                         "~/Scripts/detailsElements.js",

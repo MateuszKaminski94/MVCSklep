@@ -7,7 +7,7 @@
         if (recordToDelete != '') {
 
             // Send post request with AJAX
-            $.post("/Cart/RemoveFromCart", { "albumID": recordToDelete },
+            $.post("/Cart/RemoveFromCart", { "gameid": recordToDelete },
                 function (response) {
                     // Success
                     if (response.RemovedItemCount == 0) {

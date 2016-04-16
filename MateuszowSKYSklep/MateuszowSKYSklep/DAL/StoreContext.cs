@@ -4,10 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using MateuszowSKYSklep.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MateuszowSKYSklep.DAL
 {
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<ApplicationUser>
     {
         public StoreContext() : base("StoreContext")
         {
@@ -17,6 +18,11 @@ namespace MateuszowSKYSklep.DAL
         static StoreContext()
         {
             Database.SetInitializer<StoreContext>(new StoreInitializer());
+        }
+
+        public static StoreContext Create()
+        {
+            return new StoreContext();
         }
 
         public DbSet<Game> Games { get; set; }

@@ -6,8 +6,6 @@
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
-@Html.Action("GenresMenu","Home")
-
 @foreach (var game in Model)
 {
     @game.GameTitle

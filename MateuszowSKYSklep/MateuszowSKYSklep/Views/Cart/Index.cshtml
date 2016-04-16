@@ -6,8 +6,6 @@
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
-@Html.Action("GenresMenu", "Home")
-
 <table id="cart-table">
     @foreach (var cartItem in Model.CartItems)
     {
