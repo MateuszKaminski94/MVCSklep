@@ -18,15 +18,15 @@ namespace MateuszowSKYSklep.Infrastructure
             }
         }
 
-        private static string _gameImagesFolderRelative = ConfigurationManager.AppSettings["GameImagesFolder"];
+        //private static string _gameImagesFolderRelative = ConfigurationManager.AppSettings["GameImagesFolder"];
 
-        public static string GameImagesFolderRelative
-        {
-            get
-            {
-                return _gameImagesFolderRelative;
-            }
-        }
+        //public static string GameImagesFolderRelative
+        //{
+        //    get
+        //    {
+        //        return _gameImagesFolderRelative;
+        //    }
+        //}
 
         private static string _gameScreensFolderRelative = ConfigurationManager.AppSettings["GameScreensFolder"];
 

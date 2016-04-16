@@ -10,7 +10,7 @@ namespace MateuszowSKYSklep.Models
     {
         public int OrderId { get; set; }
 
-        //public string UserID { get; set; }
+        public string UserID { get; set; }
 
         [StringLength(150)]
         public string FirstName { get; set; }
