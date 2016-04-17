@@ -5,13 +5,14 @@
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
-@using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<div id="loginbody">
+    @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-    <div id="login-error">
-        @Html.ValidationMessage("loginerror", "")
-    </div>
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+        </div>
 
         <table id="login-table" style="margin-left: auto; margin-right: auto;">
             <tr>
@@ -44,25 +45,16 @@
                 </td>
             </tr>
         </table>
-}
-
-
-<div style="text-align: center;">
-
-    <a href="@Url.Action("Register")">Nie mam jeszcze konta</a>
-
-    <br /><br />
-
-    @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
-    {
-        @Html.AntiForgeryToken()
-
-        <button type="submit" id="FacebookLoginButton" name="provider" value="Facebook" title="Log in using your Facebook account"></button>
-
-            <button type="submit" id="GoogleLoginButton" name="provider" value="Google" title="Log in using your Google account"></button>
     }
 
+
+    <div style="text-align: center;">
+
+        <a href="@Url.Action("Register")">Nie mam jeszcze konta</a>
+
+        <br /><br />
+
+    </div>
+
 </div>
-
-
 

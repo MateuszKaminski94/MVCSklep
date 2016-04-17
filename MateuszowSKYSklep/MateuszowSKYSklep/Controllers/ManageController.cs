@@ -35,7 +35,7 @@ namespace MateuszowSKYSklep.Controllers
         {
             UserManager = userManager;
         }
-        
+
         public enum ManageMessageId
         {
             ChangePasswordSuccess,
@@ -89,7 +89,7 @@ namespace MateuszowSKYSklep.Controllers
                 ViewData = (ViewDataDictionary)TempData["ViewData"];
             }
 
-            if (User.IsInRole("Admin")) 
+            if (User.IsInRole("Admin"))
                 ViewBag.UserIsAdmin = true;
             else
                 ViewBag.UserIsAdmin = false;
@@ -127,7 +127,7 @@ namespace MateuszowSKYSklep.Controllers
 
                 AddErrors(result);
             }
-            
+
             if (!ModelState.IsValid)
             {
                 TempData["ViewData"] = ViewData;
@@ -143,7 +143,7 @@ namespace MateuszowSKYSklep.Controllers
         {
             // In case we have simple errors - return
             if (!ModelState.IsValid)
-            {            
+            {
                 TempData["ViewData"] = ViewData;
                 return RedirectToAction("Index");
             }
@@ -195,7 +195,7 @@ namespace MateuszowSKYSklep.Controllers
                     return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
                 }
                 AddErrors(result);
-                
+
                 if (!ModelState.IsValid)
                 {
                     TempData["ViewData"] = ViewData;
@@ -266,39 +266,39 @@ namespace MateuszowSKYSklep.Controllers
         }
 
 
-        //public ActionResult OrdersList()
-        //{
-        //    bool isAdmin = User.IsInRole("Admin");
-        //    ViewBag.UserIsAdmin = isAdmin;
+        public ActionResult OrdersList()
+        {
+            bool isAdmin = User.IsInRole("Admin");
+            ViewBag.UserIsAdmin = isAdmin;
 
-        //    IEnumerable<Order> userOrders;   
+            IEnumerable<Order> userOrders;
 
-        //    // For admin users - return all orders
-        //    if (isAdmin)
-        //    {
-        //        userOrders = db.Orders.Include("OrderItems").
-        //            OrderByDescending(o => o.DateCreated).ToArray();
-        //    }
-        //    else
-        //    {
-        //        var userId = User.Identity.GetUserId();
-        //        userOrders = db.Orders.Where(o => o.UserId == userId).Include("OrderItems").
-        //            OrderByDescending(o => o.DateCreated).ToArray();
-        //    }           
-            
-        //    return View(userOrders);
-        //}
+            // For admin users - return all orders
+            if (isAdmin)
+            {
+                userOrders = db.Orders.Include("OrderItems").
+                    OrderByDescending(o => o.DateCreated).ToArray();
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                userOrders = db.Orders.Where(o => o.UserId == userId).Include("OrderItems").
+                    OrderByDescending(o => o.DateCreated).ToArray();
+            }
+
+            return View(userOrders);
+        }
 
         [HttpPost]
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         public OrderState ChangeOrderState(Order order)
         {
             Order orderToModify = db.Orders.Find(order.OrderId);
             orderToModify.OrderState = order.OrderState;
             db.SaveChanges();
 
-            if (orderToModify.OrderState == OrderState.Shipped)
-            {
+            //if (orderToModify.OrderState == OrderState.Shipped)
+            //{
                 // Schedule confirmation
                 //string url = Url.Action("SendStatusEmail", "Manage", new { orderid = orderToModify.OrderId, lastname = orderToModify.LastName }, Request.Url.Scheme);
 
@@ -307,14 +307,14 @@ namespace MateuszowSKYSklep.Controllers
                 //IMailService mailService = new HangFirePostalMailService();
                 //mailService.SendOrderShippedEmail(orderToModify);
 
-                mailService.SendOrderShippedEmail(orderToModify);
+                //mailService.SendOrderShippedEmail(orderToModify);
 
                 //dynamic email = new Postal.Email("OrderShipped");
                 //email.To = orderToModify.Email;
                 //email.OrderId = orderToModify.OrderId;
                 //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
                 //email.Send();
-            }
+            //}
 
             return order.OrderState;
         }
@@ -435,9 +435,9 @@ namespace MateuszowSKYSklep.Controllers
                     var genres = db.Genres.ToArray();
                     model.Genres = genres;
                     return View(model);
-                } 
+                }
             }
-           
+
         }
 
         public ActionResult HideProduct(int albumId)

@@ -2,33 +2,35 @@
     $('#show').click(function () {
         var menu = $('#genre');
         var triangle = $('#show');
-        if (menu.is(':hidden')) {
-            menu.slideDown();
-            /*triangle.animate({ borderSpacing: 90 }, {
+        if (!menu.is(':hidden')) {
+            menu.slideUp();
+            $('#show').css('background-color', '#32353a');
+            triangle.animate({ borderSpacing: 90 }, {
                 step: function (now, fx) {
-                    $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
-                    $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
-                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                    $('#show img').css('-webkit-transform', 'rotate(' +'-'+ now + 'deg)');
+                    $('#show img').css('-moz-transform', 'rotate(' + '-' + now + 'deg)');
+                    $('#show img').css('transform', 'rotate(' + '-' + now + 'deg)');
                 },
                 duration: 'slow'
-            }, 'linear');*/
+            }, 'linear');
         }
         else {
-            menu.slideUp();
-            /*triangle.animate({ borderSpacing: -90 }, {
+            menu.slideDown();
+            $('#show').css('background-color', '#494d55');
+            triangle.animate({ borderSpacing: 0 }, {
                 step: function (now, fx) {
-                    $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
-                    $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
-                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                    $('#show img').css('-webkit-transform', 'rotate(' + '-' + now + 'deg)');
+                    $('#show img').css('-moz-transform', 'rotate(' + '-' + now + 'deg)');
+                    $('#show img').css('transform', 'rotate(' + '-' + now + 'deg)');
                 },
                 duration: 'slow'
-            }, 'linear');*/
+            }, 'linear');
         }
     });
 
     var selectview = function (id) {
 
-        window.location.href = 'game-'+id+'.html';
+        window.location.href = 'game-' + id + '.html';
     };
 
     var setupAutoComplete = function () {
@@ -47,7 +49,43 @@
         $input.autocomplete(options);
     };
 
-    $('#search-filter').each(setupAutoComplete);
+    $('#searchfilter').each(setupAutoComplete);
+
+    $('#searchbutton').click(function () {
+        if ($('#searchfilter').is(':hidden')) {
+            $('#searchfilter').css('display', 'block');
+            $('#search').css('background-color', '#494d55');
+        }
+        else {
+            $('#searchfilter').css('display', 'none');
+            $('#search').css('background-color', '#32353a');
+        }
+        //$('#searchfilter').toggle(function() {});
+    });
+
+    $('#user').click(function () {
+        if ($('#userbox').is(':hidden')) {
+            $('#userbox').css('display', 'block');
+            $('#user').css('background-color', '#494d55');
+        }
+        else {
+            $('#userbox').css('display', 'none');
+            $('#user').css('background-color', '#32353a');
+        }
+        //$('#searchfilter').toggle(function() {});
+    });
+       
+    
+    //$('#search').toggle(
+    //            function () {
+    //                $('#search').css('background-color', '#494d55');
+    //            },
+    //        function () {
+    //            $('#search').css('background-color', '#32353a');
+    //        });
+
+
+    //});
 
 });
 

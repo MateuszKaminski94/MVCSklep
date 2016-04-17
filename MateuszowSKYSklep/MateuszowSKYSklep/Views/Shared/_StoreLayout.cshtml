@@ -18,36 +18,52 @@
         <div id="nav">
             <div id="header">
                 <div id="show">
-                    <img src="@Url.Content("~/Content/Images/kategorie.png")" />
+                    <img src="@Url.Content("~/Content/Images/kategorie.png")"/>
                 </div>
-                <div id="search">
-                    <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")" />
 
-                    <form id="search-form">
-                        <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions", "Home")" placeholder="Wprowadź tytuł gry..." />
-                        @*<input type="submit" value="K" />*@
+                <a href="@Url.Content("~/")">
+                    <div id="logo">
+                        <img src="@Url.Content("~/Content/Images/logo.png")" />
+                    </div>
+                </a>
+
+                <div id="search">
+                    <div id="searchbutton">
+                        <img src="@Url.Content("~/Content/Images/wyszukiwarka.png")"/>
+                    </div>
+
+                    <form id="searchform">
+                        <input id="searchfilter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions", "Home")" placeholder="Wprowadź tytuł gry..."/>
                     </form>
 
                 </div>
-                <div id="logo">
-                    <a href="@Url.Content("~/")">
-                        <img src="@Url.Content("~/Content/Images/logo.png")" />
-                    </a>
-                </div>
+
+                <a href="@Url.Action("OrdersList", "Manage")">
+                    <div id="basket">
+
+                        <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                        <div id="basketcount">
+                            @Html.Action("GetCartItemsCount", "Cart")
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </a>
+
                 <div id="user">
-                    <img src="@Url.Content("~/Content/Images/logowanie.png")"/>
-                    @Html.Partial("_LoginPartial")
+                    <img src="@Url.Content("~/Content/Images/logowanie.png")" />
+
+                    <div id="userbox">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
                 </div>
-                <div id="basket">
-                    <img src="@Url.Content("~/Content/Images/koszyk.png")" />
-                    @Html.Action("GetCartItemsCount", "Cart")
-                </div>
+
                 <div style="clear: both;"></div>
             </div>
         </div>
     </header>
 
-    @Html.Action("GenresMenu","Home")
+    @Html.Action("GenresMenu", "Home")
 
     <div>
 
