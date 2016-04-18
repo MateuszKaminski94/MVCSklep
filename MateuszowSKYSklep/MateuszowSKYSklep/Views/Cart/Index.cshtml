@@ -6,34 +6,34 @@
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
-<section class="content-section">
-    <div class="section-header" style="margin-bottom: 0px;">
-        <h1>Twój koszyk</h1>
+<div class="sectiontitle">
+    Koszyk
+</div>
+<div class="basebody">
+    @foreach (var cartItem in Model.CartItems)
+    {
+        <div id="cart-row-@cartItem.Game.GameId">
+            <div class="cartposition">
+                <a href="@Url.Action("Details", "Store", new {id = cartItem.Game.GameId})">
+                    <img src="@Url.GameScreenPath(cartItem.Game.GameId, cartItem.Game.MainImageFilename)" />
+                </a>
+                <a href="@Url.Action("Details", "Store", new {id = cartItem.Game.GameId})">@cartItem.Game.GameTitle</a>
+                Ilość: <span id="cart-item-count-@cartItem.Game.GameId">@cartItem.Quantity</span>
+                @String.Format("{0:0.##}", cartItem.TotalPrice) $
+                <a class="removeProduct" data-id="@cartItem.Game.GameId" href="#">Usuń</a>
+            </div>
+        </div>
+    }
+    <div style="clear: both;"></div>
+
+    <div id="cart-empty-message" @if (Model.CartItems != null && Model.CartItems.Count > 0) { <text> class="hidden" </text>     }>
+        Twój koszyk jest pusty.
     </div>
-    <table id="cart-table">
-        @foreach (var cartItem in Model.CartItems)
-        {
-            <tr id="cart-row-@cartItem.Game.GameId">
-                <td>
-                    <a href="@Url.Action("Details", "Store", new { id = cartItem.Game.GameId })">
-                        <img src="@Url.GameScreenPath(cartItem.Game.GameId, cartItem.Game.MainImageFilename)" />
-                    </a>
-                </td>
-                <td><a href="@Url.Action("Details", "Store", new { id = cartItem.Game.GameId })">@cartItem.Game.GameTitle</a></td>
-                <td>Ilość: <span id="cart-item-count-@cartItem.Game.GameId">@cartItem.Quantity</span></td>
-                <td>@String.Format("{0:0.##}", cartItem.TotalPrice) zł</td>
-                <td><a class="removeProduct" data-id="@cartItem.Game.GameId" href="#">Usuń</a></td>
-            </tr>
-        }
 
-        <tr id="cart-empty-message" @if (Model.CartItems != null && Model.CartItems.Count > 0) { <text> class="hidden" </text>   }>
-            <td>Twój koszyk jest pusty. Może warto coś do niego dodać?</td>
-        </tr>
 
-    </table>
 
     <div id="total-price">
-        Razem: <span id="total-price-value">@String.Format("{0:0.##}", Model.TotalPrice)</span> zł
+        Razem: <span id="total-price-value">@String.Format("{0:0.##}", Model.TotalPrice)</span> $
     </div>
 
     <div class="section-button-container">
@@ -43,4 +43,4 @@
             <a class="button-link" id="cart-button-checkout" href="@Url.Action("Checkout", "Cart")">Kupuję</a>
         }
     </div>
-</section>
+</div>

@@ -13,51 +13,50 @@
     {
         @Html.AntiForgeryToken()
 
-        <div id="login-error">
+        <div id="loginerror">
             @Html.ValidationMessage("loginerror", "")
         </div>
 
-        <table id="logintable" style="margin-left: auto; margin-right: auto;">
-            <tr>
-                <td>@Html.LabelFor(o => o.Email, "E-mail:")</td>
-                <td>
-                    @Html.TextBoxFor(o => o.Email)
-                    <div class="login-validation-message">
-                        @Html.ValidationMessageFor(o => o.Email)
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(o => o.Password, "Hasło:")</td>
-                <td>
-                    @Html.PasswordFor(o => o.Password)
-                    <div class="login-validation-message">
-                        @Html.ValidationMessageFor(o => o.Password)
-                    </div>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <div class="checkbox" style="margin-bottom: 10px;">
-                        @Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })
-                        @Html.LabelFor(m => m.RememberMe)
-                    </div>
+        <div id="loginbody">
+            <div id="loginemail">
+                @Html.LabelFor(o => o.Email, "E-mail:")
 
-                    <input type="submit" value="Zaloguj" class="submitLink" style=" height: 40px;" />
-                </td>
-            </tr>
-        </table>
+                @Html.TextBoxFor(o => o.Email)
+                <div class="login-validation-message">
+                    @Html.ValidationMessageFor(o => o.Email)
+                </div>
+
+            </div>
+            <div id="loginpassword">
+                @Html.LabelFor(o => o.Password, "Hasło:")
+
+                @Html.PasswordFor(o => o.Password)
+                <div class="login-validation-message">
+                    @Html.ValidationMessageFor(o => o.Password)
+                </div>
+
+            </div>
+
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe, new {@checked = "checked"})
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+
+            <input type="submit" value="Zaloguj" class="submitLink"/>
+        </div>
     }
 
+    <div id="noaccountyet">
 
-    <div style="text-align: center;">
-
-        <a href="@Url.Action("Register")">Nie mam jeszcze konta</a>
-
-        <br /><br />
+        <a href="@Url.Action("Register")">
+            <div id="noaccountbutton">Nie mam jeszcze konta</div>
+        </a>
 
     </div>
 
+    <div style="clear: both;"></div>
+
+
 </div>
+
 
