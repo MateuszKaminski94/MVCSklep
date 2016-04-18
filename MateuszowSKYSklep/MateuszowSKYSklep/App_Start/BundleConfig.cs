@@ -30,8 +30,7 @@ namespace MateuszowSKYSklep.App_Start
                       "~/Content/mainSite.css",
                       "~/Content/indexSite.css",
                       "~/Content/cartSite.css",
-                      "~/Content/detailsSite.css",
-                      "~/Content/accountSite.css"));
+                      "~/Content/detailsSite.css"));
         }
     }
 }

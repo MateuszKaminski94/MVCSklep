@@ -1,6 +1,10 @@
 ﻿$(function() {
 
     $(".removeProduct").click(function () {
+        var tempCartCount = $('#cartcount').html();
+        if (tempCartCount > 0)
+            tempCartCount--;
+        $('#cartcount').text(tempCartCount);
 
         var recordToDelete = $(this).attr("data-id");
 
@@ -19,6 +23,7 @@
                         });
                     } else {
                         $('#cart-item-count-' + response.RemoveItemId).text(response.RemovedItemCount);
+                        //$.
                     }
 
                     if (response.CartItemsCount == 0) {

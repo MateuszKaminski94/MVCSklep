@@ -38,11 +38,11 @@
 
                 </div>
 
-                <a href="@Url.Action("OrdersList", "Manage")">
-                    <div id="basket">
+                <a href="@Url.Action("Index", "Cart")">
+                    <div id="cart">
 
                         <img src="@Url.Content("~/Content/Images/koszyk.png")" />
-                        <div id="basketcount">
+                        <div id="cartcount">
                             @Html.Action("GetCartItemsCount", "Cart")
                         </div>
                         <div style="clear: both;"></div>

@@ -64,7 +64,7 @@ namespace MateuszowSKYSklep.DAL
 
             //var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             //var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@spodigly.pl";
+            const string name = "admin@mateuszowskysklep.pl";
             const string password = "P@ssw0rd";
             const string roleName = "Admin";
 

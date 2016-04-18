@@ -120,21 +120,23 @@ body
     top: 78px;
     right: -50%;
     line-height: 30px;
-    width: 200px;
+    padding: 10px 20px;
     background-color: #ef4c45;
     border: 10px solid #ef4c45;
     border-radius: 10px;
     text-align: center;
     display: none;
+    min-width: 200px;
 }
 
-#registerLink, #loginLink{
+#userbox a
+{
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
 }
 
-#basket
+#cart
 {
     float: right;
     height: 46px;
@@ -148,12 +150,12 @@ body
     display: block;
 }
 
-#basketcount {
+#cartcount {
     float: left;
     color: #ffffff;
 }
 
-#basket img {
+#cart img {
     float: left;
     margin-right: 10px;
 }
@@ -239,4 +241,35 @@ nav#genre ul li a:hover
     height: 30px;
     margin: 2px 5px;
     padding: 20px;
+}
+
+/*account section*/
+.basebody {
+    background-color: #32353a;
+    margin: 0 20px 15px 20px;
+    padding: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.basebody input
+{
+    font-size: 20px;
+    background-color: #494d55;
+    border: none;
+    color: #ffffff;
+    height: 30px;
+    font-family: 'Ubuntu-L';
+}
+
+.basebody a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.input-validation-error, .field-validation-error
+{
+    font-size: 12px;
 }

@@ -170,7 +170,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\accountSite.css" />
     <Content Include="Content\cartSite.css" />
     <Content Include="Content\detailsSite.css" />
     <Content Include="Content\Images\kategorie.png" />
