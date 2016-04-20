@@ -1,7 +1,7 @@
 ﻿@model MateuszowSKYSklep.ViewModels.RegisterViewModel
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Rejestracja w sklepie MateuszowSKY";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
@@ -13,40 +13,47 @@
     {
         @Html.AntiForgeryToken()
 
-        <div id="login-error">
+        <div id="loginerror">
             @Html.ValidationMessage("loginerror", "")
             @Html.ValidationSummary()
         </div>
 
-        <div id="registeremail">
-            @Html.LabelFor(o => o.Email, "E-mail:")
+        <table class="userdatatable">
 
-            @Html.TextBoxFor(o => o.Email)
-            <div class="login-validation-message">
-                @Html.ValidationMessageFor(o => o.Email)
-            </div>
-        </div>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Email, "E-mail:")</td>
+                <td>@Html.TextBoxFor(o => o.Email)</td>
+                <td>
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email)
+                    </div>
+                </td>
+            </tr>
 
-        <div id="registerpassword">
-            @Html.LabelFor(o => o.Password, "Hasło:")
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Password, "Hasło:")</td>
+                <td>@Html.PasswordFor(o => o.Password)</td>
+                <td>
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password)
+                    </div>
+                </td>
+            </tr>
 
-            @Html.PasswordFor(o => o.Password)
-            <div class="login-validation-message">
-                @Html.ValidationMessageFor(o => o.Password)
-            </div>
-        </div>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.ConfirmPassword, "Potwierdź hasło:")</td>
 
-        <div id="registerconfirm">
-            @Html.LabelFor(o => o.ConfirmPassword, "Potwierdź hasło:")
-
-            @Html.PasswordFor(o => o.ConfirmPassword)
-            <div class="login-validation-message">
-                @Html.ValidationMessageFor(o => o.ConfirmPassword)
-            </div>
-        </div>
+                <td>@Html.PasswordFor(o => o.ConfirmPassword)</td>
+                <td>
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ConfirmPassword)
+                    </div>
+                </td>
+            </tr>
+        </table>
 
         <div id="registerbutton">
-            <input type="submit" value="Zarejestruj" class="submitLink"/>
+            <input type="submit" value="Zarejestruj" class="submitLink" />
         </div>
     }
 </div>

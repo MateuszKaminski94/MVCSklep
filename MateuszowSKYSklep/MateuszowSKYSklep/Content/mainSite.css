@@ -120,7 +120,7 @@ body
     top: 78px;
     right: -50%;
     line-height: 30px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #ef4c45;
     border: 10px solid #ef4c45;
     border-radius: 10px;
@@ -282,26 +282,9 @@ nav#genre ul li a:hover
     font-size: 12px;
 }
 
-#loginbody {
-    width: 460px;
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-}
-
-#loginpassword input{
-    margin-left: 10px;
-}
-
-#noaccountyet {
-    width: 210px;
-    float: left;
-    margin-top: 50px;
-    margin-left: 100px;
-}
-
 #noaccountbutton
 {
+    margin: 20px 190px;
     padding: 10px;
     width: 210px;
     background-color: #494d55;
@@ -311,17 +294,12 @@ nav#genre ul li a:hover
     padding: 10px 15px;
     height: 42px;
     cursor: pointer;
-    text-align: center;
+    margin-left: -300px;
+    margin-top: 20px;
 }
 
 #loginerror {
     margin-bottom: 20px;
-}
-
-.checkbox {
-    font-size: 15px;
-    margin-bottom: 10px;
-    
 }
 
 #RememeberMe {
@@ -329,14 +307,16 @@ nav#genre ul li a:hover
     height: 13px;
 }
 
-#registerpassword input {
-    margin-left: 98px;
+.firstcolumn {
+    text-align: left;
 }
 
-#registeremail input {
-    margin-left: 92px;
+.userdatatable {
+    margin-left: 50px;
 }
 
+
+/*cart*/
 .cartposition {
     background-color: #494d55;
     padding: 10px;

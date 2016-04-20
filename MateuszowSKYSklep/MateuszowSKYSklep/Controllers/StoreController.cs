@@ -41,6 +41,7 @@ namespace MateuszowSKYSklep.Controllers
             var genre = db.Genres.Include("Games").Single(g => g.Name.ToUpper() == genrename.ToUpper());
             var games = genre.Games.ToList();
 
+            ViewBag.Title = "Gry "+genre.Name;
 
             return View(games);
         }

@@ -1,7 +1,7 @@
 ﻿@model MateuszowSKYSklep.ViewModels.LoginViewModel
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Logowanie w sklepie MateuszowSKY";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
@@ -17,46 +17,33 @@
             @Html.ValidationMessage("loginerror", "")
         </div>
 
-        <div id="loginbody">
-            <div id="loginemail">
-                @Html.LabelFor(o => o.Email, "E-mail:")
+        <table class="userdatatable">
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Email, "E-mail:")</td>
+                <td>@Html.TextBoxFor(o => o.Email)</td>
+                <td>
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Password, "Hasło:")</td>
+                <td>@Html.PasswordFor(o => o.Password)</td>
+                <td>
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(m => m.RememberMe, new {@checked = "checked"}) @Html.LabelFor(m => m.RememberMe)</td>
+            </tr>
+        </table>
 
-                @Html.TextBoxFor(o => o.Email)
-                <div class="login-validation-message">
-                    @Html.ValidationMessageFor(o => o.Email)
-                </div>
-
-            </div>
-            <div id="loginpassword">
-                @Html.LabelFor(o => o.Password, "Hasło:")
-
-                @Html.PasswordFor(o => o.Password)
-                <div class="login-validation-message">
-                    @Html.ValidationMessageFor(o => o.Password)
-                </div>
-
-            </div>
-
-            <div class="checkbox">
-                @Html.CheckBoxFor(m => m.RememberMe, new {@checked = "checked"})
-                @Html.LabelFor(m => m.RememberMe)
-            </div>
-
-            <input type="submit" value="Zaloguj" class="submitLink"/>
-        </div>
-    }
-
-    <div id="noaccountyet">
-
+        <input type="submit" value="Zaloguj" class="submitLink" />
         <a href="@Url.Action("Register")">
             <div id="noaccountbutton">Nie mam jeszcze konta</div>
         </a>
-
-    </div>
-
-    <div style="clear: both;"></div>
-
-
+    }
 </div>
-
-
