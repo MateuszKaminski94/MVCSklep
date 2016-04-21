@@ -16,7 +16,7 @@
 
     <div id="preordercontent">
         <div id="preorderleft">
-            <img src="@Url.Content("~/Content/Images/przycisklewo.png")"/>
+            <img src="@Url.Content("~/Content/Images/przycisklewo.png")" />
         </div>
 
         <ul id="preordercontainer">
@@ -25,6 +25,14 @@
                 <li class="preorderimage">
                     <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
                         <img src="@Url.GameScreenPath(game.GameId, "ss1.jpg")" style="float: left;"/>
+
+                        <div class="preordertitle">
+                            <br />@game.GameTitle
+                        </div>
+                        <div class="preorderpriceinfo">
+                            @String.Format("{0:0.##}", game.Price)$
+                        </div>
+
                     </a>
                 </li>
             }
@@ -32,7 +40,7 @@
         <div style="clear: both;"></div>
 
         <div id="preorderright">
-            <img src="@Url.Content("~/Content/Images/przyciskprawo.png")"/>
+            <img src="@Url.Content("~/Content/Images/przyciskprawo.png")" />
         </div>
     </div>
 </div>
@@ -47,7 +55,7 @@
         {
             <li>
                 <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
-                    <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)"/>
+                    <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)" />
                     <div class="randomsmalltitle">
                         @game.GameTitle
                     </div>

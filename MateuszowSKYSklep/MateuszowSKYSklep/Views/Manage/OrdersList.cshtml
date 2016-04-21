@@ -2,111 +2,93 @@
 @model IEnumerable<MateuszowSKYSklep.Models.Order>
 
 @{
-    ViewBag.Title = "OrdersList";
+    ViewBag.Title = "Lista zamówień";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
-<h2>OrdersList</h2>
+<div class="sectiontitle">
+    Lista zamówień
+</div>
+<div class="basebody">
+    @if (Model.Any())
+    {
 
-<div>
 
-    <hr />
-
-    <h2 class="manageHeader">Twoje zamówienia</h2>
-
-    <div>
-
-        @if (Model.Any())
-        {
-
-            <table id="orders-table">
-
-                @foreach (var order in Model)
+        foreach (var order in Model)
                 {
-                    <tr @if (order.OrderState == MateuszowSKYSklep.Models.OrderState.New) { <text> class="newOrder" </text>      }>
-                        <td>
-                            <strong>Nr zamówienia: </strong>@order.OrderId
-                        </td>
-                        <td>
-                            <strong>Data: </strong>
-                            @order.DateCreated.ToString("dd-MM-yyyy")
-                        </td>
-                        <td>
-                            <strong>Stan: </strong><br />
-
-                            @if (ViewBag.UserIsAdmin)
+            <table class="orderstable">
+                <tr @if (order.OrderState == MateuszowSKYSklep.Models.OrderState.New)
+                    {
+                        <text> class="newOrder" </text>
+                    }>
+                    <td>
+                        @order.OrderId
+                    </td>
+                    <td>
+                        @order.DateCreated.ToString("dd-MM-yyyy")
+                    </td>
+                    <td>
+                        @if (ViewBag.UserIsAdmin)
+                        {
+                            using (Html.BeginForm("ChangeOrderState", "Manage"))
                             {
-                                using (Html.BeginForm("ChangeOrderState", "Manage"))
-                                {
-                                    @Html.HiddenFor(o => order.OrderId)
-                                    @Html.EnumDropDownListFor(o => order.OrderState, new { @class = "orderstateddl" })
-                                }
+                                @Html.HiddenFor(o => order.OrderId)
+                                @Html.EnumDropDownListFor(o => order.OrderState, new {@class = "orderstateddl"})
                             }
-                            else
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(o => order.OrderState)
+                        }
+
+                    </td>
+                    <td>
+                        @order.TotalPrice zł
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @order.FirstName @order.LastName<br />
+                        @order.Address<br />
+                        @order.CodeAndCity<br />
+                    </td>
+                    <td colspan="2">
+                        @order.Comment
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <ul>
+                            @foreach (var orderItem in order.OrderItems)
                             {
-                                @Html.DisplayFor(o => order.OrderState)
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = orderItem.GameId})">
+                                            <img class="album-cover" src="@Url.GameScreenPath(orderItem.Game.GameId, orderItem.Game.MainImageFilename)"/>
+                                            <h1>
+                                                @orderItem.Game.DeveloperName - @orderItem.Game.GameTitle<br/>
+                                                <strong>sztuk: @orderItem.Quantity, łącznie: @(orderItem.Quantity*@orderItem.UnitPrice) zł</strong>
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
                             }
+                            <div style="clear: both;"></div>
+                        </ul>
 
-                        </td>
-
-                        <td>
-                            <strong>Dane wysyłkowe:</strong><br />
-                            @order.FirstName @order.LastName<br />
-                            @order.Address<br />
-                            @order.CodeAndCity<br />
-                        </td>
-                        <td>
-                            <strong>Uwagi: </strong><br />
-                            @order.Comment
-                        </td>
-                        <td>
-                            <strong>Łączny koszt:</strong> @order.TotalPrice zł
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="6">
-                            <section>
-                                <ul class="ThreeColumnsStaticCoversList large-cover-list-bottom">
-
-                                    @foreach (var orderItem in order.OrderItems)
-                                    {
-                                        <li>
-                                            <article>
-                                                <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = orderItem.GameId })">
-                                                    <img class="album-cover" src="@Url.GameScreenPath(orderItem.Game.GameId, orderItem.Game.MainImageFilename)" />
-                                                    <h1>
-                                                        @orderItem.Game.DeveloperName - @orderItem.Game.GameTitle<br />
-                                                        <strong>sztuk: @orderItem.Quantity, łącznie: @(orderItem.Quantity * @orderItem.UnitPrice)  zł</strong>
-                                                    </h1>
-                                                </a>
-                                            </article>
-                                        </li>
-                                    }
-
-                                </ul>
-
-                            </section>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="6"></td>
-                    </tr>
-
-                <!-- Next order -->
-
-                }
-
-
+                    </td>
+                </tr>
             </table>
         }
-        else
-        {
-            <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
-                Brak zamówień.
-            </div>
-        }
-    </div>
 
 
+
+    }
+    else
+    {
+        <div style = "text-align: center; margin-top: 50px; margin-bottom: 50px;" >
+        Brak zamówień.
+        </div>
+    }
 
 </div>

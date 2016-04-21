@@ -28,7 +28,7 @@
         clearInterval(interval);
     }
 
-    $('#preordercontainer').on('mouseenter', stopSlider).on('mouseleave', startSlider);
+    //$('#preordercontainer').on('mouseenter', stopSlider).on('mouseleave', startSlider);
 
     $('#preorderleft').click(function () {
         $('#preordercontainer').animate({ 'margin-left': '+=960' }, animationSpeed, function() {
@@ -47,5 +47,5 @@
         });
     });
 
-    startSlider();
+    //startSlider();
 });

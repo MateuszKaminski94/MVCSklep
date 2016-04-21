@@ -20,7 +20,8 @@ namespace MateuszowSKYSklep.App_Start
                         "~/Scripts/indexElements.js",
                         "~/Scripts/detailsElements.js",
                         "~/Scripts/orderElements.js",
-                        "~/Scripts/cartElements.js"));
+                        "~/Scripts/cartElements.js",
+                        "~/Scripts/css3DElements.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/themes/base/core.css",
@@ -30,7 +31,8 @@ namespace MateuszowSKYSklep.App_Start
                       "~/Content/mainSite.css",
                       "~/Content/indexSite.css",
                       "~/Content/cartSite.css",
-                      "~/Content/detailsSite.css"));
+                      "~/Content/detailsSite.css",
+                      "~/Content/css3DElements.css"));
         }
     }
 }

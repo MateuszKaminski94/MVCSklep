@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\cartSite.css" />
+    <Content Include="Content\css3DElements.css" />
     <Content Include="Content\detailsSite.css" />
     <Content Include="Content\Images\kategorie.png" />
     <Content Include="Content\Images\koszyk.png" />
@@ -332,6 +333,7 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\cartElements.js" />
+    <Content Include="Scripts\css3DElements.js" />
     <Content Include="Scripts\detailsElements.js" />
     <Content Include="Scripts\indexElements.js" />
     <Content Include="Scripts\basicElements.js" />

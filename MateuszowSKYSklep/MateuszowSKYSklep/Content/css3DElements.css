@@ -1,0 +1,122 @@
+﻿/*#basecss3d {
+    color: #e84b82;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-perspective: 100000px;
+    -moz-perspective: 100000px;
+    -ms-perspective: 100000px;
+    perspective: 100000px;
+    /*-webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+    margin-bottom: 15px;
+    background-color: #32353a;
+}
+
+    #basecss3d ul {
+        list-style: none;
+        -webkit-padding-start: 0;
+    }
+
+.basecssik3d {
+    height: 139px;
+    width: 248px;
+    background-color: #494d55;
+    float: left;
+    margin: 1px;
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+    .basecssik3d img {
+        height: 139px;
+        width: 248px;
+    }
+
+#basecss3d a {
+    text-decoration: none;
+}
+
+.basecssik3d:hover {
+    -webkit-transform: translate3d(0px, 0px, -139px) rotateX(90deg);
+    -moz-transform: translate3d(0px, 0px, -139px) rotateX(90deg);
+    -ms-transform: translate3d(0px, 0px, -139px) rotateX(90deg);
+    transform: translate3d(0px, 0px, -139px) rotateX(90deg);
+}
+
+.basecssik3d:after {
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 139px;
+    width: 248px;
+    color: #fff;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: translate3d(0px, 100%, 0px) rotateX(-90deg);
+    -moz-transform: translate3d(0px, 100%, 0px) rotateX(-90deg);
+    -ms-transform: translate3d(0px, 100%, 0px) rotateX(-90deg);
+    transform: translate3d(0px, 100%, 0px) rotateX(-90deg);
+}
+
+.hovercss3dsmalltitle {
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 35px;
+    width: 248px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.hovercssik3d {
+    
+    height: 139px;
+    width: 248px;
+    background-color: #494d55;
+    float: left;
+    margin: 1px;
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform: translate3d(0px, 100%, 0px) rotateX(90deg);
+    -moz-transform: translate3d(0px, 100%, 0px) rotateX(90deg);
+    -ms-transform: translate3d(0px, 100%, 0px) rotateX(90deg);
+    transform: translate3d(0px, 100%, 0px) rotateX(90deg);
+
+}
+    .hovercssik3d img {
+        height: 139px;
+        width: 248px;
+    }*/

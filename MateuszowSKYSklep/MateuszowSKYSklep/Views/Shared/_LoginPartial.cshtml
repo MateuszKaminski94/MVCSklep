@@ -8,7 +8,11 @@
             @Html.AntiForgeryToken()
 
             <div>
-                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
+
+            </div>
+            <div>
+                @Html.ActionLink("Zamówienia", "OrdersList", "Manage", routeValues: null, htmlAttributes: null)
 
             </div>
             <div>
