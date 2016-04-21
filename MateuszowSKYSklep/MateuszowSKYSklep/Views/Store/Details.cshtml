@@ -86,6 +86,13 @@
             <br/>GPU: @Model.Games.Gpu
             <br/>HDD: @Model.Games.Hdd
             <br/>OS: @Model.Games.Os
+            <br/>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <div id="editdetail">
+                    <a href="@Url.Action("AddProduct", "Manage", new {gameId = Model.Games.GameId})">Edytuj</a>
+                </div>
+            }
         </div>
     </div>
     <div style="clear: both;"></div>

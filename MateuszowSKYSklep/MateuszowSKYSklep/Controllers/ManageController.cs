@@ -137,119 +137,119 @@ namespace MateuszowSKYSklep.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword([Bind(Prefix = "ChangePasswordViewModel")]ChangePasswordViewModel model)
-        {
-            // In case we have simple errors - return
-            if (!ModelState.IsValid)
-            {
-                TempData["ViewData"] = ViewData;
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> ChangePassword([Bind(Prefix = "ChangePasswordViewModel")]ChangePasswordViewModel model)
+        //{
+        //    // In case we have simple errors - return
+        //    if (!ModelState.IsValid)
+        //    {
+        //        TempData["ViewData"] = ViewData;
+        //        return RedirectToAction("Index");
+        //    }
 
-            var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
-            if (result.Succeeded)
-            {
-                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
-                    await SignInAsync(user, isPersistent: false);
-                }
-                return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
-            }
-            AddErrors(result);
+        //    var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+        //    if (result.Succeeded)
+        //    {
+        //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+        //        if (user != null)
+        //        {
+        //            await SignInAsync(user, isPersistent: false);
+        //        }
+        //        return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+        //    }
+        //    AddErrors(result);
 
-            // In case we have login errors
-            if (!ModelState.IsValid)
-            {
-                TempData["ViewData"] = ViewData;
-                return RedirectToAction("Index");
-            }
+        //    // In case we have login errors
+        //    if (!ModelState.IsValid)
+        //    {
+        //        TempData["ViewData"] = ViewData;
+        //        return RedirectToAction("Index");
+        //    }
 
-            var message = ManageMessageId.ChangePasswordSuccess;
-            return RedirectToAction("Index", new { Message = message });
-        }
+        //    var message = ManageMessageId.ChangePasswordSuccess;
+        //    return RedirectToAction("Index", new { Message = message });
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SetPassword([Bind(Prefix = "SetPasswordViewModel")]SetPasswordViewModel model)
-        {
-            // In case we have simple errors - return
-            if (!ModelState.IsValid)
-            {
-                TempData["ViewData"] = ViewData;
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> SetPassword([Bind(Prefix = "SetPasswordViewModel")]SetPasswordViewModel model)
+        //{
+        //    // In case we have simple errors - return
+        //    if (!ModelState.IsValid)
+        //    {
+        //        TempData["ViewData"] = ViewData;
+        //        return RedirectToAction("Index");
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
-                if (result.Succeeded)
-                {
-                    var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                    if (user != null)
-                    {
-                        await SignInAsync(user, isPersistent: false);
-                    }
-                    return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
-                }
-                AddErrors(result);
+        //    if (ModelState.IsValid)
+        //    {
+        //        var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+        //        if (result.Succeeded)
+        //        {
+        //            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+        //            if (user != null)
+        //            {
+        //                await SignInAsync(user, isPersistent: false);
+        //            }
+        //            return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
+        //        }
+        //        AddErrors(result);
 
-                if (!ModelState.IsValid)
-                {
-                    TempData["ViewData"] = ViewData;
-                    return RedirectToAction("Index");
-                }
-            }
+        //        if (!ModelState.IsValid)
+        //        {
+        //            TempData["ViewData"] = ViewData;
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
 
-            var message = ManageMessageId.SetPasswordSuccess;
-            return RedirectToAction("Index", new { Message = message });
-        }
+        //    var message = ManageMessageId.SetPasswordSuccess;
+        //    return RedirectToAction("Index", new { Message = message });
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LinkLogin(string provider)
-        {
-            // Request a redirect to the external login provider to link a login for the current user
-            return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult LinkLogin(string provider)
+        //{
+        //    // Request a redirect to the external login provider to link a login for the current user
+        //    return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
+        //}
 
-        // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
+        //// Used for XSRF protection when adding external logins
+        //private const string XsrfKey = "XsrfId";
 
-        public async Task<ActionResult> LinkLoginCallback()
-        {
-            var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
-            if (loginInfo == null)
-            {
-                return RedirectToAction("Index", new { Message = ManageMessageId.Error });
-            }
-            var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
-            return result.Succeeded ? RedirectToAction("Index", new { Message = ManageMessageId.LinkSuccess }) : RedirectToAction("Index", new { Message = ManageMessageId.Error });
-        }
+        //public async Task<ActionResult> LinkLoginCallback()
+        //{
+        //    var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
+        //    if (loginInfo == null)
+        //    {
+        //        return RedirectToAction("Index", new { Message = ManageMessageId.Error });
+        //    }
+        //    var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
+        //    return result.Succeeded ? RedirectToAction("Index", new { Message = ManageMessageId.LinkSuccess }) : RedirectToAction("Index", new { Message = ManageMessageId.Error });
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
-        {
-            ManageMessageId? message;
-            var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
-            if (result.Succeeded)
-            {
-                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
-                    await SignInAsync(user, isPersistent: false);
-                }
-                message = ManageMessageId.RemoveLoginSuccess;
-            }
-            else
-            {
-                message = ManageMessageId.Error;
-            }
-            return RedirectToAction("Index", new { Message = message });
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
+        //{
+        //    ManageMessageId? message;
+        //    var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
+        //    if (result.Succeeded)
+        //    {
+        //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+        //        if (user != null)
+        //        {
+        //            await SignInAsync(user, isPersistent: false);
+        //        }
+        //        message = ManageMessageId.RemoveLoginSuccess;
+        //    }
+        //    else
+        //    {
+        //        message = ManageMessageId.Error;
+        //    }
+        //    return RedirectToAction("Index", new { Message = message });
+        //}
 
         private void AddErrors(IdentityResult result)
         {
@@ -299,21 +299,21 @@ namespace MateuszowSKYSklep.Controllers
 
             //if (orderToModify.OrderState == OrderState.Shipped)
             //{
-                // Schedule confirmation
-                //string url = Url.Action("SendStatusEmail", "Manage", new { orderid = orderToModify.OrderId, lastname = orderToModify.LastName }, Request.Url.Scheme);
+            // Schedule confirmation
+            //string url = Url.Action("SendStatusEmail", "Manage", new { orderid = orderToModify.OrderId, lastname = orderToModify.LastName }, Request.Url.Scheme);
 
-                //BackgroundJob.Enqueue(() => Helpers.CallUrl(url));
+            //BackgroundJob.Enqueue(() => Helpers.CallUrl(url));
 
-                //IMailService mailService = new HangFirePostalMailService();
-                //mailService.SendOrderShippedEmail(orderToModify);
+            //IMailService mailService = new HangFirePostalMailService();
+            //mailService.SendOrderShippedEmail(orderToModify);
 
-                //mailService.SendOrderShippedEmail(orderToModify);
+            //mailService.SendOrderShippedEmail(orderToModify);
 
-                //dynamic email = new Postal.Email("OrderShipped");
-                //email.To = orderToModify.Email;
-                //email.OrderId = orderToModify.OrderId;
-                //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
-                //email.Send();
+            //dynamic email = new Postal.Email("OrderShipped");
+            //email.To = orderToModify.Email;
+            //email.OrderId = orderToModify.OrderId;
+            //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
+            //email.Send();
             //}
 
             return order.OrderState;
@@ -365,30 +365,27 @@ namespace MateuszowSKYSklep.Controllers
         //}
 
         [Authorize(Roles = "Admin")]
-        public ActionResult AddProduct(int? albumId, bool? confirmSuccess)
+        public ActionResult AddProduct(int? gameId, bool? confirmSuccess)
         {
-            if (albumId.HasValue)
+            Game g;
+
+            if (gameId.HasValue)
+            {
                 ViewBag.EditMode = true;
+                g = db.Games.Find(gameId);
+            }
             else
+            {
                 ViewBag.EditMode = false;
+                g = new Game();
+            }
 
             var result = new EditProductViewModel();
-            var genres = db.Genres.ToArray();
+            var genres = db.Genres.ToList();
             result.Genres = genres;
             result.ConfirmSuccess = confirmSuccess;
 
-            Game a;
-
-            if (!albumId.HasValue)
-            {
-                a = new Game();
-            }
-            else
-            {
-                a = db.Games.Find(albumId);
-            }
-
-            result.Game = a;
+            result.Game = g;
 
             return View(result);
         }
@@ -408,26 +405,35 @@ namespace MateuszowSKYSklep.Controllers
             {
                 // Creating new entry
 
-                var f = Request.Form;
+                //var f = Request.Form;
                 // Verify that the user selected a file
                 if (file != null && file.ContentLength > 0)
                 {
-                    // Generate filename
+                    if (ModelState.IsValid)
+                    {
+                        // Generate filename
 
-                    var fileExt = Path.GetExtension(file.FileName);
-                    var filename = Guid.NewGuid() + fileExt;
+                        var fileExt = Path.GetExtension(file.FileName);
+                        var filename = Guid.NewGuid() + fileExt;
 
-                    var path = Path.Combine(Server.MapPath(AppConfig.GameScreensFolderRelative), filename);
-                    file.SaveAs(path);
+                        var path = Path.Combine(Server.MapPath(AppConfig.GameScreensFolderRelative), filename);
+                        file.SaveAs(path);
 
-                    // Save info to DB
-                    model.Game.MainImageFilename = filename;
-                    model.Game.DatePremiere = DateTime.Now;
+                        // Save info to DB
+                        model.Game.MainImageFilename = filename;
+                        model.Game.DatePremiere = DateTime.Now;
 
-                    db.Entry(model.Game).State = EntityState.Added;
-                    db.SaveChanges();
+                        db.Entry(model.Game).State = EntityState.Added;
+                        db.SaveChanges();
 
-                    return RedirectToAction("AddProduct", new { confirmSuccess = true });
+                        return RedirectToAction("AddProduct", new {confirmSuccess = true});
+                    }
+                    else
+                    {
+                        var genres = db.Genres.ToArray();
+                        model.Genres = genres;
+                        return View(model);
+                    }
                 }
                 else
                 {
@@ -440,19 +446,19 @@ namespace MateuszowSKYSklep.Controllers
 
         }
 
-        public ActionResult HideProduct(int albumId)
+        public ActionResult HideProduct(int gameId)
         {
-            var album = db.Games.Find(albumId);
-            album.IsHidden = true;
+            var game = db.Games.Find(gameId);
+            game.IsHidden = true;
             db.SaveChanges();
 
             return RedirectToAction("AddProduct", new { confirmSuccess = true });
         }
 
-        public ActionResult UnhideProduct(int albumId)
+        public ActionResult UnhideProduct(int gameId)
         {
-            var album = db.Games.Find(albumId);
-            album.IsHidden = false;
+            var game = db.Games.Find(gameId);
+            game.IsHidden = false;
             db.SaveChanges();
 
             return RedirectToAction("AddProduct", new { confirmSuccess = true });

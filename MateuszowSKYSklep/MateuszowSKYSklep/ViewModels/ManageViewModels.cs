@@ -53,11 +53,4 @@ namespace MateuszowSKYSklep.ViewModels
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
-    public class EditProductViewModel
-    {
-        public Game Game { get; set; }
-        public IEnumerable<Genre> Genres { get; set; }
-        public bool? ConfirmSuccess { get; set; }
-    }
 }

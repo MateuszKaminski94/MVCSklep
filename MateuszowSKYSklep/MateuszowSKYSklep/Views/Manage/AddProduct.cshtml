@@ -1,0 +1,146 @@
+﻿@model MateuszowSKYSklep.ViewModels.EditProductViewModel
+
+@{
+    ViewBag.Title = "Edycja produktu";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div class="sectiontitle">
+    Edycja produktu
+</div>
+<div class="basebody">
+    @if (Model.ConfirmSuccess.HasValue && Model.ConfirmSuccess.Value)
+    {
+        <div style="text-align: center; margin: 50px;">
+            Pomyślnie wprowadzono zmiany!
+        </div>
+    }
+
+    @using (@Html.BeginForm("AddProduct", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="error-summary-centered">
+            @Html.ValidationSummary()
+        </div>
+
+        @Html.HiddenFor(o => o.Game.GameId)
+        @Html.HiddenFor(o => o.Game.DatePremiere)
+        @Html.HiddenFor(o => o.Game.MainImageFilename)
+
+        <table class="userdatatable">
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.DeveloperName, "Deweloper:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.DeveloperName)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.DeveloperName)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.GameTitle, "Tytuł:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.GameTitle)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.GameTitle)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Genres, "Gatunek:")</td>
+                <td>@Html.DropDownListFor(m => m.Game.GenreId, new SelectList(Model.Genres, "GenreId", "Name", Model.Genres.First().GenreId))</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Price, "Cena:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Price)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Price)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.IsPreOrder, "Preorder:")</td>
+                <td>@Html.CheckBoxFor(o => o.Game.IsPreOrder)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.DatePremiere, "Data premiery:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.DatePremiere)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.DatePremiere)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Cpu, "CPU:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Cpu)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Cpu)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Ram, "RAM:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Ram)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Ram)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Gpu, "GPU:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Gpu)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Gpu)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Hdd, "HDD:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Hdd)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Hdd)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Os, "OS:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Os)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Os)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Description, "Opis:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Description)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Description)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.Source, "Źródło:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.Source)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.Source)</td>
+            </tr>
+
+            @if (ViewBag.EditMode == null || !ViewBag.EditMode)
+                {
+                <tr>
+                    <td colspan="3">
+
+                        <div class="upload">
+                            <input type="file" name="file" />
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td style="text-align: left">
+                    @if (ViewBag.EditMode)
+                    {
+                        if (Model.Game.IsHidden)
+                        {
+                            @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
+                            <a href="@Url.Action("UnhideProduct", "Manage", new { gameId = Model.Game.GameId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                Przywróć
+                            </a>
+                        }
+                        else
+                        {
+                            @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
+                            <a href="@Url.Action("HideProduct", "Manage", new { gameId = Model.Game.GameId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                Usuń
+                            </a>
+                        }
+                    }
+                </td>
+
+                <td style="text-align: right;">
+
+                    <input type="submit" value="Zapisz" class="submitLink" style="height: 40px; margin-right: 0px; margin-top: 30px; font-weight: bold;" />
+
+                </td>
+                <td></td>
+
+            </tr>
+        </table>
+    }
+
+</div>
+
+
+
