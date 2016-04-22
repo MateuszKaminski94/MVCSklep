@@ -26,7 +26,7 @@
 
         @Html.HiddenFor(o => o.Game.GameId)
         @Html.HiddenFor(o => o.Game.DatePremiere)
-        @Html.HiddenFor(o => o.Game.MainImageFilename)
+        @Html.HiddenFor(o => o.Game.ImageFilename1)
 
         <table class="userdatatable">
             <tr>
@@ -94,8 +94,64 @@
                 <td>@Html.TextBoxFor(o => o.Game.Source)</td>
                 <td>@Html.ValidationMessageFor(o => o.Game.Source)</td>
             </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImagesCount, "Liczba obrazów:")</td>
+                <td>@Html.TextBoxFor(o => o.Game.ImagesCount)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImagesCount)</td>
+            </tr>
 
-            @if (ViewBag.EditMode == null || !ViewBag.EditMode)
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename1, "Obraz nr 1:")</td>
+                <td><input type="file" name="file" />@Html.(o => o.Game.ImageFilename1)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename1)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename2, "Obraz nr 2:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename2)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename2)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename3, "Obraz nr 3:")</td>
+                <td><input type="file" name="file"/>@Html.TextBoxFor(o => o.Game.ImageFilename3)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename3)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename4, "Obraz nr 4:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename4)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename4)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename5, "Obraz nr 5:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename5)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename5)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename6, "Obraz nr 6:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename6)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename6)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename7, "Obraz nr 7:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename7)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename7)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename8, "Obraz nr 8:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename8)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename8)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename9, "Obraz nr 9:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename9)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename9)</td>
+            </tr>
+            <tr>
+                <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename10, "Obraz nr 10:")</td>
+                <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename10)</td>
+                <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename10)</td>
+            </tr>
+
+            @*@if (ViewBag.EditMode == null || !ViewBag.EditMode)
                 {
                 <tr>
                     <td colspan="3">
@@ -106,7 +162,7 @@
 
                     </td>
                 </tr>
-            }
+            }*@
 
             <tr>
                 <td style="text-align: left">

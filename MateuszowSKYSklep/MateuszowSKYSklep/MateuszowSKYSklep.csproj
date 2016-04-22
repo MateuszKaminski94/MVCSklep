@@ -185,7 +185,6 @@
     <Content Include="Content\mainSite.css" />
     <Content Include="Content\Screens\1\ss1.jpg" />
     <Content Include="Content\Screens\1\ss10.jpg" />
-    <Content Include="Content\Screens\1\ss11.jpg" />
     <Content Include="Content\Screens\1\ss2.jpg" />
     <Content Include="Content\Screens\1\ss3.jpg" />
     <Content Include="Content\Screens\1\ss4.jpg" />
@@ -196,8 +195,6 @@
     <Content Include="Content\Screens\1\ss9.jpg" />
     <Content Include="Content\Screens\2\ss1.jpg" />
     <Content Include="Content\Screens\2\ss10.jpg" />
-    <Content Include="Content\Screens\2\ss11.jpg" />
-    <Content Include="Content\Screens\2\ss12.jpg" />
     <Content Include="Content\Screens\2\ss2.jpg" />
     <Content Include="Content\Screens\2\ss3.jpg" />
     <Content Include="Content\Screens\2\ss4.jpg" />
@@ -208,8 +205,6 @@
     <Content Include="Content\Screens\2\ss9.jpg" />
     <Content Include="Content\Screens\3\ss1.jpg" />
     <Content Include="Content\Screens\3\ss10.jpg" />
-    <Content Include="Content\Screens\3\ss11.jpg" />
-    <Content Include="Content\Screens\3\ss12.jpg" />
     <Content Include="Content\Screens\3\ss2.jpg" />
     <Content Include="Content\Screens\3\ss3.jpg" />
     <Content Include="Content\Screens\3\ss4.jpg" />
@@ -220,7 +215,6 @@
     <Content Include="Content\Screens\3\ss9.jpg" />
     <Content Include="Content\Screens\4\ss1.jpg" />
     <Content Include="Content\Screens\4\ss10.jpg" />
-    <Content Include="Content\Screens\4\ss11.jpg" />
     <Content Include="Content\Screens\4\ss2.jpg" />
     <Content Include="Content\Screens\4\ss3.jpg" />
     <Content Include="Content\Screens\4\ss4.jpg" />
@@ -231,8 +225,6 @@
     <Content Include="Content\Screens\4\ss9.jpg" />
     <Content Include="Content\Screens\5\ss1.jpg" />
     <Content Include="Content\Screens\5\ss10.jpg" />
-    <Content Include="Content\Screens\5\ss11.jpg" />
-    <Content Include="Content\Screens\5\ss12.jpg" />
     <Content Include="Content\Screens\5\ss2.jpg" />
     <Content Include="Content\Screens\5\ss3.jpg" />
     <Content Include="Content\Screens\5\ss4.jpg" />
@@ -253,12 +245,6 @@
     <Content Include="Content\Screens\6\ss9.jpg" />
     <Content Include="Content\Screens\7\ss1.jpg" />
     <Content Include="Content\Screens\7\ss10.jpg" />
-    <Content Include="Content\Screens\7\ss11.jpg" />
-    <Content Include="Content\Screens\7\ss12.jpg" />
-    <Content Include="Content\Screens\7\ss13.jpg" />
-    <Content Include="Content\Screens\7\ss14.jpg" />
-    <Content Include="Content\Screens\7\ss15.jpg" />
-    <Content Include="Content\Screens\7\ss16.jpg" />
     <Content Include="Content\Screens\7\ss2.jpg" />
     <Content Include="Content\Screens\7\ss3.jpg" />
     <Content Include="Content\Screens\7\ss4.jpg" />
@@ -269,8 +255,6 @@
     <Content Include="Content\Screens\7\ss9.jpg" />
     <Content Include="Content\Screens\8\ss1.jpg" />
     <Content Include="Content\Screens\8\ss10.jpg" />
-    <Content Include="Content\Screens\8\ss11.jpg" />
-    <Content Include="Content\Screens\8\ss12.jpg" />
     <Content Include="Content\Screens\8\ss2.jpg" />
     <Content Include="Content\Screens\8\ss3.jpg" />
     <Content Include="Content\Screens\8\ss4.jpg" />
@@ -281,7 +265,6 @@
     <Content Include="Content\Screens\8\ss9.jpg" />
     <Content Include="Content\Screens\9\ss1.jpg" />
     <Content Include="Content\Screens\9\ss10.jpg" />
-    <Content Include="Content\Screens\9\ss11.jpg" />
     <Content Include="Content\Screens\9\ss2.jpg" />
     <Content Include="Content\Screens\9\ss3.jpg" />
     <Content Include="Content\Screens\9\ss4.jpg" />

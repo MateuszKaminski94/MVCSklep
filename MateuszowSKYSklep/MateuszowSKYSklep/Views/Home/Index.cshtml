@@ -24,7 +24,7 @@
             {
                 <li class="preorderimage">
                     <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
-                        <img src="@Url.GameScreenPath(game.GameId, "ss1.jpg")" style="float: left;"/>
+                        <img src="@Url.GameScreenPath(game.GameId, game.ImageFilename1)" style="float: left;"/>
 
                         <div class="preordertitle">
                             <br />@game.GameTitle
@@ -55,7 +55,7 @@
         {
             <li>
                 <a href="@Url.Action("Details", "Store", new {id = game.GameId})">
-                    <img src="@Url.GameScreenPath(game.GameId, game.MainImageFilename)" />
+                    <img src="@Url.GameScreenPath(game.GameId, game.ImageFilename1)" />
                     <div class="randomsmalltitle">
                         @game.GameTitle
                     </div>
