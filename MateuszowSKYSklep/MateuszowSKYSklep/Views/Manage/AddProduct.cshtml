@@ -94,13 +94,13 @@
                 <td>@Html.TextBoxFor(o => o.Game.Source)</td>
                 <td>@Html.ValidationMessageFor(o => o.Game.Source)</td>
             </tr>
-            <tr>
+            @*<tr>
                 <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImagesCount, "Liczba obrazów:")</td>
                 <td>@Html.TextBoxFor(o => o.Game.ImagesCount)</td>
                 <td>@Html.ValidationMessageFor(o => o.Game.ImagesCount)</td>
-            </tr>
+            </tr>*@
 
-            <tr>
+            @*<tr>
                 <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename1, "Obraz nr 1:")</td>
                 <td><input type="file" name="file" />@Html.(o => o.Game.ImageFilename1)</td>
                 <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename1)</td>
@@ -149,9 +149,9 @@
                 <td class="firstcolumn">@Html.LabelFor(o => o.Game.ImageFilename10, "Obraz nr 10:")</td>
                 <td><input type="file" name="file" />@Html.TextBoxFor(o => o.Game.ImageFilename10)</td>
                 <td>@Html.ValidationMessageFor(o => o.Game.ImageFilename10)</td>
-            </tr>
+            </tr>*@
 
-            @*@if (ViewBag.EditMode == null || !ViewBag.EditMode)
+            @if (ViewBag.EditMode == null || !ViewBag.EditMode)
                 {
                 <tr>
                     <td colspan="3">
@@ -162,7 +162,7 @@
 
                     </td>
                 </tr>
-            }*@
+            }
 
             <tr>
                 <td style="text-align: left">
