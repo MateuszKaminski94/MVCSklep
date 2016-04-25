@@ -420,7 +420,7 @@ namespace MateuszowSKYSklep.Controllers
                         file.SaveAs(path);
 
                         // Save info to DB
-                        model.Game.ImageFilename1 = filename;
+                        model.Game.ImageFilenames[0] = filename;
                         model.Game.DatePremiere = DateTime.Now;
 
                         db.Entry(model.Game).State = EntityState.Added;

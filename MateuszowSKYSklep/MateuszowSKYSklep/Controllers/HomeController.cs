@@ -53,7 +53,7 @@ namespace MateuszowSKYSklep.Controllers
             var games =
                 this.db.Games.Where(g => !g.IsHidden && g.GameTitle.ToLower().Contains(term.ToLower()))
                     .Take(5)
-                    .Select(g => new {label = g.GameTitle, id = g.GameId, image = g.ImageFilename1});
+                    .Select(g => new {label = g.GameTitle, id = g.GameId, image = g.ImageFilenames[0]});
 
             return Json(games, JsonRequestBehavior.AllowGet);
         }

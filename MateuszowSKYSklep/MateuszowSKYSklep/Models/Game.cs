@@ -23,8 +23,9 @@ namespace MateuszowSKYSklep.Models
         public decimal Price { get; set; }
         public bool IsPreOrder { get; set; }
         public bool IsHidden { get; set; }
-        //public int ImagesCount { get; set; }
-        //public string ImageFilename1 { get; set; }
+        public int ImagesCount { get; set; }
+        public  virtual List<string> ImageFilenames { get; set; }
+        //public virtual List<string> ImageFilename1 { get; set; }
         //public string ImageFilename2 { get; set; }
         //public string ImageFilename3 { get; set; }
         //public string ImageFilename4 { get; set; }
