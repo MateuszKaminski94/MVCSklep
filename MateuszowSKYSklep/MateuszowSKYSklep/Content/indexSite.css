@@ -64,30 +64,6 @@
     overflow: hidden;
 }
 
-/*.preordertitle {
-    padding: 0 60px 10px 30px;
-    top: 0;
-    background-color: rgba(0,0,0,0.4);
-    font-size: 20px;
-    color: #ffffff;
-    position: absolute;  
-}
-
-.preorderpriceinfo {
-    background-image: url('Images/pricebackground.png');
-    float: right;
-    height: 52px;
-    width: 130px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 30px;
-    padding-top: 18px;
-    text-align: right;
-    padding-right: 15px;
-    color: #ffffff;
-}*/
-
 #randomtitle 
 {
     margin-top: 15px;

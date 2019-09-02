@@ -11,7 +11,5 @@ namespace MateuszowSKYSklep.ViewModels
         public IEnumerable<Game> PreOrders { get; set; }
 
         public IEnumerable<Game> Randoms { get; set; }
-
-        //public IEnumerable<string> Links { get; set; }
     }
 }

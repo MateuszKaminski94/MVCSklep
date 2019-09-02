@@ -17,10 +17,10 @@ namespace MateuszowSKYSklep.Infrastructure
             return absolutePath;
         }
 
-        public static string GameScreenPath(this UrlHelper helper, int id, string gameScreenname)
+        public static string GameScreenPath(this UrlHelper helper, string gameScreenname)
         {
             var gameScreenFolder = AppConfig.GameScreensFolderRelative;
-            var path = Path.Combine(gameScreenFolder, id.ToString(), gameScreenname);
+            var path = Path.Combine(gameScreenFolder, gameScreenname);
             var absolutePath = helper.Content(path);
             return absolutePath;
         }

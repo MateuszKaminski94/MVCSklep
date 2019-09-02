@@ -64,7 +64,7 @@
                                 <li>
                                     <article>
                                         <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = orderItem.GameId})">
-                                            <img class="album-cover" src="@Url.GameScreenPath(orderItem.Game.GameId, orderItem.Game.MainImageFilename)"/>
+                                            <img class="album-cover" src="@Url.GameScreenPath(orderItem.Game.ImageFilename)"/>
                                             <h1>
                                                 @orderItem.Game.DeveloperName - @orderItem.Game.GameTitle<br/>
                                                 <strong>sztuk: @orderItem.Quantity, łącznie: @(orderItem.Quantity*@orderItem.UnitPrice) zł</strong>

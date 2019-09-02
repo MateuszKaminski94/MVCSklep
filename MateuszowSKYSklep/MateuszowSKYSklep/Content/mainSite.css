@@ -381,3 +381,9 @@ article {
     float: left;
     margin: 22px;
 }
+
+.buttonManage {
+    background-color: #494d55;
+    padding: 8px;
+
+}

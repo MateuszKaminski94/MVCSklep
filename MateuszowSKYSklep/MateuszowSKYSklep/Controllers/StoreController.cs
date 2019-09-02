@@ -24,13 +24,10 @@ namespace MateuszowSKYSklep.Controllers
 
             var randoms = db.Games.Where(a => !a.IsHidden && a.GameId!=game.GameId).OrderBy(a => Guid.NewGuid()).Take(4).ToList();
 
-            var links = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/"+id.ToString()));
-
             var vm = new DetailsViewModel()
             {
                 Randoms = randoms,
-                Games = game,
-                Links = links
+                Games = game
             };
 
             return View(vm);

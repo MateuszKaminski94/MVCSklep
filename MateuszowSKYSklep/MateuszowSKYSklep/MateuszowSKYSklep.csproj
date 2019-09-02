@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -183,96 +184,15 @@
     <Content Include="Content\Images\wyszukiwarka.png" />
     <Content Include="Content\indexSite.css" />
     <Content Include="Content\mainSite.css" />
-    <Content Include="Content\Screens\1\ss1.jpg" />
-    <Content Include="Content\Screens\1\ss10.jpg" />
-    <Content Include="Content\Screens\1\ss2.jpg" />
-    <Content Include="Content\Screens\1\ss3.jpg" />
-    <Content Include="Content\Screens\1\ss4.jpg" />
-    <Content Include="Content\Screens\1\ss5.jpg" />
-    <Content Include="Content\Screens\1\ss6.jpg" />
-    <Content Include="Content\Screens\1\ss7.jpg" />
-    <Content Include="Content\Screens\1\ss8.jpg" />
-    <Content Include="Content\Screens\1\ss9.jpg" />
-    <Content Include="Content\Screens\2\ss1.jpg" />
-    <Content Include="Content\Screens\2\ss10.jpg" />
-    <Content Include="Content\Screens\2\ss2.jpg" />
-    <Content Include="Content\Screens\2\ss3.jpg" />
-    <Content Include="Content\Screens\2\ss4.jpg" />
-    <Content Include="Content\Screens\2\ss5.jpg" />
-    <Content Include="Content\Screens\2\ss6.jpg" />
-    <Content Include="Content\Screens\2\ss7.jpg" />
-    <Content Include="Content\Screens\2\ss8.jpg" />
-    <Content Include="Content\Screens\2\ss9.jpg" />
-    <Content Include="Content\Screens\3\ss1.jpg" />
-    <Content Include="Content\Screens\3\ss10.jpg" />
-    <Content Include="Content\Screens\3\ss2.jpg" />
-    <Content Include="Content\Screens\3\ss3.jpg" />
-    <Content Include="Content\Screens\3\ss4.jpg" />
-    <Content Include="Content\Screens\3\ss5.jpg" />
-    <Content Include="Content\Screens\3\ss6.jpg" />
-    <Content Include="Content\Screens\3\ss7.jpg" />
-    <Content Include="Content\Screens\3\ss8.jpg" />
-    <Content Include="Content\Screens\3\ss9.jpg" />
-    <Content Include="Content\Screens\4\ss1.jpg" />
-    <Content Include="Content\Screens\4\ss10.jpg" />
-    <Content Include="Content\Screens\4\ss2.jpg" />
-    <Content Include="Content\Screens\4\ss3.jpg" />
-    <Content Include="Content\Screens\4\ss4.jpg" />
-    <Content Include="Content\Screens\4\ss5.jpg" />
-    <Content Include="Content\Screens\4\ss6.jpg" />
-    <Content Include="Content\Screens\4\ss7.jpg" />
-    <Content Include="Content\Screens\4\ss8.jpg" />
-    <Content Include="Content\Screens\4\ss9.jpg" />
-    <Content Include="Content\Screens\5\ss1.jpg" />
-    <Content Include="Content\Screens\5\ss10.jpg" />
-    <Content Include="Content\Screens\5\ss2.jpg" />
-    <Content Include="Content\Screens\5\ss3.jpg" />
-    <Content Include="Content\Screens\5\ss4.jpg" />
-    <Content Include="Content\Screens\5\ss5.jpg" />
-    <Content Include="Content\Screens\5\ss6.jpg" />
-    <Content Include="Content\Screens\5\ss7.jpg" />
-    <Content Include="Content\Screens\5\ss8.jpg" />
-    <Content Include="Content\Screens\5\ss9.jpg" />
-    <Content Include="Content\Screens\6\ss1.jpg" />
-    <Content Include="Content\Screens\6\ss10.jpg" />
-    <Content Include="Content\Screens\6\ss2.jpg" />
-    <Content Include="Content\Screens\6\ss3.jpg" />
-    <Content Include="Content\Screens\6\ss4.jpg" />
-    <Content Include="Content\Screens\6\ss5.jpg" />
-    <Content Include="Content\Screens\6\ss6.jpg" />
-    <Content Include="Content\Screens\6\ss7.jpg" />
-    <Content Include="Content\Screens\6\ss8.jpg" />
-    <Content Include="Content\Screens\6\ss9.jpg" />
-    <Content Include="Content\Screens\7\ss1.jpg" />
-    <Content Include="Content\Screens\7\ss10.jpg" />
-    <Content Include="Content\Screens\7\ss2.jpg" />
-    <Content Include="Content\Screens\7\ss3.jpg" />
-    <Content Include="Content\Screens\7\ss4.jpg" />
-    <Content Include="Content\Screens\7\ss5.jpg" />
-    <Content Include="Content\Screens\7\ss6.jpg" />
-    <Content Include="Content\Screens\7\ss7.jpg" />
-    <Content Include="Content\Screens\7\ss8.jpg" />
-    <Content Include="Content\Screens\7\ss9.jpg" />
-    <Content Include="Content\Screens\8\ss1.jpg" />
-    <Content Include="Content\Screens\8\ss10.jpg" />
-    <Content Include="Content\Screens\8\ss2.jpg" />
-    <Content Include="Content\Screens\8\ss3.jpg" />
-    <Content Include="Content\Screens\8\ss4.jpg" />
-    <Content Include="Content\Screens\8\ss5.jpg" />
-    <Content Include="Content\Screens\8\ss6.jpg" />
-    <Content Include="Content\Screens\8\ss7.jpg" />
-    <Content Include="Content\Screens\8\ss8.jpg" />
-    <Content Include="Content\Screens\8\ss9.jpg" />
-    <Content Include="Content\Screens\9\ss1.jpg" />
-    <Content Include="Content\Screens\9\ss10.jpg" />
-    <Content Include="Content\Screens\9\ss2.jpg" />
-    <Content Include="Content\Screens\9\ss3.jpg" />
-    <Content Include="Content\Screens\9\ss4.jpg" />
-    <Content Include="Content\Screens\9\ss5.jpg" />
-    <Content Include="Content\Screens\9\ss6.jpg" />
-    <Content Include="Content\Screens\9\ss7.jpg" />
-    <Content Include="Content\Screens\9\ss8.jpg" />
-    <Content Include="Content\Screens\9\ss9.jpg" />
+    <Content Include="Content\Screens\ss1.jpg" />
+    <Content Include="Content\Screens\ss2.jpg" />
+    <Content Include="Content\Screens\ss3.jpg" />
+    <Content Include="Content\Screens\ss4.jpg" />
+    <Content Include="Content\Screens\ss5.jpg" />
+    <Content Include="Content\Screens\ss6.jpg" />
+    <Content Include="Content\Screens\ss7.jpg" />
+    <Content Include="Content\Screens\ss8.jpg" />
+    <Content Include="Content\Screens\ss9.jpg" />
     <Content Include="Content\Genre-icons\akcji.png" />
     <Content Include="Content\Genre-icons\fabularne.png" />
     <Content Include="Content\Genre-icons\indie.png" />
@@ -317,7 +237,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\cartElements.js" />
     <Content Include="Scripts\css3DElements.js" />
-    <Content Include="Scripts\detailsElements.js" />
     <Content Include="Scripts\indexElements.js" />
     <Content Include="Scripts\basicElements.js" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
@@ -357,6 +276,15 @@
     <Compile Include="Infrastructure\SessionManager.cs" />
     <Compile Include="Infrastructure\ShoppingCartManager.cs" />
     <Compile Include="Infrastructure\UrlHelpers.cs" />
+    <Compile Include="Migrations\201604271934284_InitialCreate.cs" />
+    <Compile Include="Migrations\201604271934284_InitialCreate.Designer.cs">
+      <DependentUpon>201604271934284_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604271946545_InitialCreate1.cs" />
+    <Compile Include="Migrations\201604271946545_InitialCreate1.Designer.cs">
+      <DependentUpon>201604271946545_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -412,6 +340,14 @@
     <Folder Include="App_Data\" />
     <Folder Include="Bundles\" />
     <Folder Include="Prototype\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604271934284_InitialCreate.resx">
+      <DependentUpon>201604271934284_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604271946545_InitialCreate1.resx">
+      <DependentUpon>201604271946545_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

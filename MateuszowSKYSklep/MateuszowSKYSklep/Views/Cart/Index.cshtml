@@ -15,7 +15,7 @@
         <div id="cart-row-@cartItem.Game.GameId">
             <div class="cartposition">
                 <a href="@Url.Action("Details", "Store", new {id = cartItem.Game.GameId})">
-                    <img src="@Url.GameScreenPath(cartItem.Game.GameId, cartItem.Game.MainImageFilename)"/>
+                    <img src="@Url.GameScreenPath(cartItem.Game.ImageFilename)"/>
                 </a>
                 <table class="carttable">
                     <tr>

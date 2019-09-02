@@ -1,5 +1,4 @@
 ﻿$(".orderstateddl").on('change', function (e) {
-    //e.preventDefault();
 
     var f = $(this.form);
     var tr = f.closest("tr");

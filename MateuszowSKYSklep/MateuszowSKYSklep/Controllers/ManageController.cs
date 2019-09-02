@@ -137,120 +137,6 @@ namespace MateuszowSKYSklep.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> ChangePassword([Bind(Prefix = "ChangePasswordViewModel")]ChangePasswordViewModel model)
-        //{
-        //    // In case we have simple errors - return
-        //    if (!ModelState.IsValid)
-        //    {
-        //        TempData["ViewData"] = ViewData;
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
-        //    if (result.Succeeded)
-        //    {
-        //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-        //        if (user != null)
-        //        {
-        //            await SignInAsync(user, isPersistent: false);
-        //        }
-        //        return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
-        //    }
-        //    AddErrors(result);
-
-        //    // In case we have login errors
-        //    if (!ModelState.IsValid)
-        //    {
-        //        TempData["ViewData"] = ViewData;
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    var message = ManageMessageId.ChangePasswordSuccess;
-        //    return RedirectToAction("Index", new { Message = message });
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> SetPassword([Bind(Prefix = "SetPasswordViewModel")]SetPasswordViewModel model)
-        //{
-        //    // In case we have simple errors - return
-        //    if (!ModelState.IsValid)
-        //    {
-        //        TempData["ViewData"] = ViewData;
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
-        //        if (result.Succeeded)
-        //        {
-        //            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-        //            if (user != null)
-        //            {
-        //                await SignInAsync(user, isPersistent: false);
-        //            }
-        //            return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
-        //        }
-        //        AddErrors(result);
-
-        //        if (!ModelState.IsValid)
-        //        {
-        //            TempData["ViewData"] = ViewData;
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-
-        //    var message = ManageMessageId.SetPasswordSuccess;
-        //    return RedirectToAction("Index", new { Message = message });
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult LinkLogin(string provider)
-        //{
-        //    // Request a redirect to the external login provider to link a login for the current user
-        //    return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
-        //}
-
-        //// Used for XSRF protection when adding external logins
-        //private const string XsrfKey = "XsrfId";
-
-        //public async Task<ActionResult> LinkLoginCallback()
-        //{
-        //    var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
-        //    if (loginInfo == null)
-        //    {
-        //        return RedirectToAction("Index", new { Message = ManageMessageId.Error });
-        //    }
-        //    var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
-        //    return result.Succeeded ? RedirectToAction("Index", new { Message = ManageMessageId.LinkSuccess }) : RedirectToAction("Index", new { Message = ManageMessageId.Error });
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
-        //{
-        //    ManageMessageId? message;
-        //    var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
-        //    if (result.Succeeded)
-        //    {
-        //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-        //        if (user != null)
-        //        {
-        //            await SignInAsync(user, isPersistent: false);
-        //        }
-        //        message = ManageMessageId.RemoveLoginSuccess;
-        //    }
-        //    else
-        //    {
-        //        message = ManageMessageId.Error;
-        //    }
-        //    return RedirectToAction("Index", new { Message = message });
-        //}
-
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -297,72 +183,8 @@ namespace MateuszowSKYSklep.Controllers
             orderToModify.OrderState = order.OrderState;
             db.SaveChanges();
 
-            //if (orderToModify.OrderState == OrderState.Shipped)
-            //{
-            // Schedule confirmation
-            //string url = Url.Action("SendStatusEmail", "Manage", new { orderid = orderToModify.OrderId, lastname = orderToModify.LastName }, Request.Url.Scheme);
-
-            //BackgroundJob.Enqueue(() => Helpers.CallUrl(url));
-
-            //IMailService mailService = new HangFirePostalMailService();
-            //mailService.SendOrderShippedEmail(orderToModify);
-
-            //mailService.SendOrderShippedEmail(orderToModify);
-
-            //dynamic email = new Postal.Email("OrderShipped");
-            //email.To = orderToModify.Email;
-            //email.OrderId = orderToModify.OrderId;
-            //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
-            //email.Send();
-            //}
-
             return order.OrderState;
         }
-
-        //[AllowAnonymous]
-        //public ActionResult SendStatusEmail(int orderid, string lastname)
-        //{
-        //    // This could also be used (but problems when hosted on Azure Websites)
-        //    // if (Request.IsLocal)            
-
-        //    var orderToModify = db.Orders.Include("OrderItems").Include("OrderItems.Album").SingleOrDefault(o => o.OrderId == orderid && o.LastName == lastname);
-
-        //    if (orderToModify == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-
-        //    OrderShippedEmail email = new OrderShippedEmail();
-        //    email.To = orderToModify.Email;
-        //    email.OrderId = orderToModify.OrderId;
-        //    email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
-        //    email.Send();
-
-        //    return new HttpStatusCodeResult(HttpStatusCode.OK);
-        //}
-
-        //[AllowAnonymous]
-        //public ActionResult SendConfirmationEmail(int orderid, string lastname)
-        //{
-        //    // orderid and lastname as a basic form of auth
-
-        //    // Also might be called by scheduler (ie. Azure scheduler), pinging endpoint and using some kind of queue / db
-
-        //    // This could also be used (but problems when hosted on Azure Websites)
-        //    // if (Request.IsLocal)            
-
-        //    var order = db.Orders.Include("OrderItems").Include("OrderItems.Album").SingleOrDefault(o => o.OrderId == orderid && o.LastName == lastname);
-
-        //    if (order == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-
-        //    OrderConfirmationEmail email = new OrderConfirmationEmail();
-        //    email.To = order.Email;
-        //    email.Cost = order.TotalPrice;
-        //    email.OrderNumber = order.OrderId;
-        //    email.FullAddress = string.Format("{0} {1}, {2}, {3}", order.FirstName, order.LastName, order.Address, order.CodeAndCity);
-        //    email.OrderItems = order.OrderItems;
-        //    email.CoverPath = AppConfig.PhotosFolderRelative;
-        //    email.Send();
-
-        //    return new HttpStatusCodeResult(HttpStatusCode.OK);
-        //}
 
         [Authorize(Roles = "Admin")]
         public ActionResult AddProduct(int? gameId, bool? confirmSuccess)
@@ -420,13 +242,13 @@ namespace MateuszowSKYSklep.Controllers
                         file.SaveAs(path);
 
                         // Save info to DB
-                        model.Game.ImageFilenames[0] = filename;
+                        model.Game.ImageFilename = filename;
                         model.Game.DatePremiere = DateTime.Now;
 
                         db.Entry(model.Game).State = EntityState.Added;
                         db.SaveChanges();
 
-                        return RedirectToAction("AddProduct", new {confirmSuccess = true});
+                        return RedirectToAction("AddProduct", new { confirmSuccess = true });
                     }
                     else
                     {
@@ -443,7 +265,6 @@ namespace MateuszowSKYSklep.Controllers
                     return View(model);
                 }
             }
-
         }
 
         public ActionResult HideProduct(int gameId)

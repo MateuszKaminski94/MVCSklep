@@ -19,17 +19,11 @@ namespace MateuszowSKYSklep.Controllers
         {
             var preOrders = db.Games.Where(a => !a.IsHidden && a.IsPreOrder).OrderByDescending(a => a.DatePremiere).Take(3).ToList();
             var randoms = db.Games.Where(a => !a.IsHidden).OrderBy(a => Guid.NewGuid()).Take(8).ToList();
-            //var links = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/" + preOrders..ToString()));
-            /*foreach (var preorder in preOrders)
-            {
-                links[0] = Directory.EnumerateFiles(Server.MapPath("~/Content/Screens/" + id.ToString()));
-            }*/
 
             var vm = new HomeViewModel()
             {
                 PreOrders = preOrders,
                 Randoms = randoms
-                //Links = links
             };
 
             return View(vm);
@@ -53,7 +47,7 @@ namespace MateuszowSKYSklep.Controllers
             var games =
                 this.db.Games.Where(g => !g.IsHidden && g.GameTitle.ToLower().Contains(term.ToLower()))
                     .Take(5)
-                    .Select(g => new {label = g.GameTitle, id = g.GameId, image = g.ImageFilenames[0]});
+                    .Select(g => new {label = g.GameTitle, id = g.GameId});
 
             return Json(games, JsonRequestBehavior.AllowGet);
         }

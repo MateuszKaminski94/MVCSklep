@@ -18,7 +18,6 @@ namespace MateuszowSKYSklep.App_Start
                         "~/Scripts/jquery.validate.unobtrusive.js",
                         "~/Scripts/basicElements.js",
                         "~/Scripts/indexElements.js",
-                        "~/Scripts/detailsElements.js",
                         "~/Scripts/orderElements.js",
                         "~/Scripts/cartElements.js",
                         "~/Scripts/css3DElements.js"));
